@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* Tailwind v4 auto-detects content, but these folders sit outside app/,
+   so point it at them explicitly to be safe. */
+@source "./app";
+@source "./components";
+@source "./sections";
+
+@theme {
+  --color-gold: #d9ad77; /* warm gold — ambient glows only */
+  --color-gold-soft: #5dd3d7; /* bright mint/teal accent — used across hovers, badges, gradients */
+  --color-teal-dark: #2fbfc4; /* primary CTA / link color */
+  --color-teal-darker: #1b3a5c; /* deep navy — headings, footer bg */
+  --color-deep-teal: #09585c; /* deep green-teal brand color — hero wash, form panel, service card bg/hover */
+  --color-cream-text: #fbf8f3; /* warm off-white — section backgrounds & light text on dark */
+
+  --font-display: var(--font-display-family), Georgia, serif;
+  --font-sans: var(--font-sans-family), -apple-system, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-text font-sans text-teal-darker antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold-soft/30 text-teal-darker;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-soft ring-offset-2 ring-offset-cream-text;
+  }
+}
+
+/* Tailwind v4: any custom class that another class will @apply must be
+   declared with @utility (top-level, not inside @layer components). */
+@utility btn-pill {
+  @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300;
+}
+
+@layer components {
+  /* Small uppercase kicker used above every section heading */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal-dark;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-6 bg-teal-dark/50;
+  }
+
+  /* Italic accent word inside headings, e.g. "About <The Square Salon>" */
+  .accent-italic {
+    @apply font-display italic text-teal-dark;
+  }
+
+  /* Pill buttons */
+  .btn-pill-solid {
+    @apply btn-pill bg-teal-dark text-white shadow-md shadow-teal-dark/30 hover:bg-teal-darker;
+  }
+  .btn-pill-outline {
+    @apply btn-pill border-2 border-teal-darker/20 text-teal-darker hover:border-teal-dark/50 hover:bg-teal-dark/5;
+  }
+
+  /* Shared input style for glass-panel forms (Hero consultation form, BookingModal) */
+  .input-glass {
+    @apply w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:ring-2 focus:ring-gold-soft;
+  }
+
+  /* Small round nav buttons for the mobile services scroller */
+  .scroll-nav-btn {
+    @apply flex h-9 w-9 items-center justify-center rounded-full border border-deep-teal/20 bg-white text-deep-teal shadow-md shadow-deep-teal/10 transition hover:bg-deep-teal hover:text-white active:scale-95 disabled:pointer-events-none disabled:opacity-30;
+  }
+
+  /* Services row: horizontal snap-scroll on mobile/tablet, plain 4-col
+     grid on desktop — no scrolling needed once there's room for a row. */
+  .services-scroll {
+    @apply flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:pb-0 lg:snap-none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .services-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .services-scroll > * {
+    @apply w-[78vw] flex-none snap-center sm:w-[60vw] lg:w-auto;
+  }
+  .doctors-scroll > * {
+    @apply lg:w-[23vw];
+  }
+
+  /* Card reveal-on-scroll (JS toggles .is-visible) */
+  .card-reveal {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Image zoom on hover inside a service/doctor card */
+  .service-media-img {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-card:hover .service-media-img,
+  .service-card.is-active .service-media-img {
+    transform: scale(1.08);
+  }
+
+  /* Bottom label — visible at rest, fades out when the hover overlay takes over */
+  .service-label {
+    opacity: 1;
+    transition: opacity 0.35s ease;
+  }
+  .service-card:hover .service-label,
+  .service-card.is-active .service-label {
+    opacity: 0;
+  }
+
+  /* Full hover overlay with details + Book Now — hidden at rest */
+  .service-overlay {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .service-card:hover .service-overlay,
+  .service-card.is-active .service-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  /* Curved SVG handoff at the base of the hero section */
+  .hero-curve {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 z-6 h-10 w-full text-cream-text sm:h-16;
+  }
+
+  @keyframes pingSlow {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    70%,
+    100% {
+      transform: scale(1.9);
+      opacity: 0;
+    }
+  }
+  .animate-ping-slow {
+    animation: pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-reveal,
+    .service-media-img,
+    .service-label,
+    .service-overlay,
+    .animate-ping-slow {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
