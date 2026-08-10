@@ -68,13 +68,13 @@ export default function Hero() {
           don't compound into a muddy, "dirty" look on small screens. */}
       <div ref={bgRef} className="absolute inset-0">
         <Image
-          src="/gallery/galary-1-compressed.jpg"
+          src="/herobg.jpg"
           alt="Aesthetic Clinic — skin and hair treatment clinic interior in Rajouri Garden, Delhi"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover object-center brightness-[0.65] saturate-[0.92] sm:brightness-[0.5] sm:saturate-[0.85]"
+          className="object-boxfit object-center brightness-[0.65] saturate-[0.92] sm:brightness-[0.5] sm:saturate-[0.85]"
         />
       </div>
 
@@ -114,20 +114,28 @@ export default function Hero() {
             Aesthetic Clinic — Rajouri Garden
           </p>
 
-          {/* Single H1 on the page — good for SEO */}
-          <h1 ref={headingRef} className="font-display text-4xl font-semibold leading-[1.15] text-white sm:text-5xl lg:text-6xl">
-            Rajouri Garden&apos;s{" "}
-            <span className="bg-[length:200%_auto] bg-gradient-to-r from-gold-soft via-amber-200 to-gold-soft bg-clip-text italic text-transparent animate-text-shimmer">
-              Precision
-            </span>{" "}
-            Skin &amp; Hair Clinic
-          </h1>
+        
+<h1
+  ref={headingRef}
+  className="font-display text-4xl font-semibold leading-[1.15] text-white sm:text-5xl lg:text-6xl"
+>
+  Rajouri Garden&apos;s{" "}
+  <span className="bg-[length:200%_auto] bg-gradient-to-r from-gold-soft via-amber-200 to-gold-soft bg-clip-text italic text-transparent animate-text-shimmer">
+    Best
+  </span>{" "}
+  Skin &amp; Hair Clinic
+</h1>
 
-          <p ref={subRef} className="mt-6 max-w-md font-sans text-base leading-relaxed text-white/85 sm:text-lg">
-            At Aesthetic Clinic, we don&apos;t follow trends — we treat with
-            clinical precision. Doctor-led skin, hair and body treatments,
-            modern technology, and care that puts your results first.
-          </p>
+<p
+  ref={subRef}
+  className="mt-6 max-w-md font-sans text-base leading-relaxed text-white/85 sm:text-lg"
+>
+  At Square Aesthetics, we don&apos;t follow trends — we treat with clinical
+  precision. Doctor-led skin, hair and body treatments, modern technology,
+  and care that puts your results first.
+</p>
+```
+
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a href="#booking" className="btn-pill-solid">
