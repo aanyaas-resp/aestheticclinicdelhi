@@ -8,7 +8,7 @@ import RealResults from "@/sections/result/page";
 import ResultsPage from "@/sections/results/page";
 import Services from "@/sections/services/page";
 
-const INSTAGRAM_URL = "https://www.instagram.com/thesquareaesthetics/";
+const INSTAGRAM_URL = "https://www.instagram.com/thesquare.salon/";
 
 export default function Home() {
   return (
@@ -16,11 +16,6 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
-      {/* NOTE: RealResults (from /sections/result) and ResultsPage (from
-          /sections/results) both render a results section back-to-back.
-          Check if this is intentional (e.g. one is a preview strip, one is
-          the full gallery) or a leftover duplicate — if it's a duplicate,
-          remove one of these two lines. */}
       <RealResults />
       <JourneySection />
       <Gallery />

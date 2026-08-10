@@ -40,7 +40,7 @@ const QUICK_LINKS = [
   { label: "FAQ", href: "/#faq" },
 ];
 const SOCIALS = [
-  { label: "Instagram", href: "https://www.instagram.com/thesquareaesthetics/", icon: InstagramIcon },
+  { label: "Instagram", href: "https://www.instagram.com/thesquare.salon/", icon: InstagramIcon },
 ];
 
 const CLINIC_NAME = "The Square Aesthetics & Wellness Clinic";

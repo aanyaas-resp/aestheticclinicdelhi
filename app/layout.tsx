@@ -30,7 +30,7 @@ const accentFont = Cinzel({
 });
 
 // TODO: confirm this is the final live domain before deploy
-const SITE_URL = "https://thesquaresalon.in";
+const SITE_URL = "https://squareastheticclinic.vercel.app/";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -66,19 +66,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Square Aesthetics & Wellness Clinic | Rajouri Garden, Delhi",
     description:
-      "Expert-led laser, skin, hair, Botox, filler & PRP treatments. The Square Aesthetics & Wellness Clinic, Rajouri Garden, Delhi.",
+      "At Square Aesthetics, we don't follow trends — we treat with clinical precision. Doctor-led skin, hair and body treatments, modern technology, and care that puts your results first. Rajouri Garden's Best Skin & Hair Clinic.",
     url: SITE_URL,
     siteName: "The Square Aesthetics & Wellness Clinic",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     locale: "en_IN",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "The Square Aesthetics & Wellness Clinic | Rajouri Garden, Delhi",
-    description: "Advanced aesthetics & wellness — expert-led, result-driven care in Rajouri Garden, Delhi.",
+    description:
+      "At Square Aesthetics, we don't follow trends — we treat with clinical precision. Doctor-led skin, hair and body treatments, modern technology, and care that puts your results first. Rajouri Garden's Best Skin & Hair Clinic.",
     images: ["/og-image.png"],
   },
+
   alternates: {
     canonical: SITE_URL,
   },
@@ -103,25 +106,42 @@ const LOCAL_BUSINESS_JSON_LD = {
     addressCountry: "IN",
   },
   url: SITE_URL,
-  sameAs: ["https://www.instagram.com/thesquareaesthetics/"],
+  sameAs: ["https://www.instagram.com/thesquare.salon/"],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
       opens: "10:30",
       closes: "20:30", // TODO: confirm actual closing time
     },
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en-IN" className={`${displayFont.variable} ${sansFont.variable} ${accentFont.variable}`}>
+    <html
+      lang="en-IN"
+      className={`${displayFont.variable} ${sansFont.variable} ${accentFont.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_JSON_LD) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(LOCAL_BUSINESS_JSON_LD),
+          }}
         />
       </head>
       <body>
