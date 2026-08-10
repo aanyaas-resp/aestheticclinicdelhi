@@ -32,18 +32,20 @@ type ResultItem = { slug: string; image: string; alt: string };
 // Default gallery — swap the `alt` text per image once you know what each
 // treatment/result actually is (helps SEO + accessibility, not just filler).
 const DEFAULT_RESULTS: ResultItem[] = [
-  { slug: "result-1", image: "/results/result-1.jpg", alt: "Before and after transformation at Aesthetic Clinic" },
-  { slug: "result-2", image: "/results/result-2.jpg", alt: "Before and after transformation at Aesthetic Clinic" },
-  { slug: "result-3", image: "/results/result-3.jpg", alt: "Before and after transformation at Aesthetic Clinic" },
-  { slug: "result-4", image: "/results/result-4.jpg", alt: "Before and after transformation at Aesthetic Clinic" },
+  { slug: "result-1", image: "/results/result1.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-2", image: "/results/result2.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-3", image: "/results/result3.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-4", image: "/results/result4.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
 ];
+
+const DEFAULT_INSTAGRAM_URL = "https://www.instagram.com/thesquare.salon";
 
 export default function ResultsGrid({
   results = DEFAULT_RESULTS,
-  instagramUrl,
+  instagramUrl = DEFAULT_INSTAGRAM_URL,
 }: {
   results?: ResultItem[];
-  instagramUrl: string;
+  instagramUrl?: string;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingWrapRef = useRef<HTMLDivElement>(null);
@@ -110,19 +112,20 @@ export default function ResultsGrid({
   }, []);
 
   return (
+      <section id="results" >
     <main
       ref={sectionRef}
-      className="bg-cream-text px-4 py-16 sm:px-6 sm:py-20 lg:px-16 lg:py-24"
+      className="bg-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-16 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
         <div ref={headingWrapRef} className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-3 justify-center sm:mb-4">Real Results</p>
-          <h1 className="font-display text-2xl font-semibold leading-snug text-teal-darker sm:text-4xl lg:text-5xl">
+          <h1 className="font-display text-2xl font-semibold leading-snug text-chocolate-deep sm:text-4xl lg:text-5xl">
             Our <span className="accent-italic">Results</span>
           </h1>
-          <p className="mt-3 font-sans text-sm leading-relaxed text-teal-darker/70 sm:mt-4 sm:text-base">
-            A snapshot of real transformations from Aesthetic Clinic. For the
-            full collection, follow along on Instagram.
+          <p className="mt-3 font-sans text-sm leading-relaxed text-chocolate-deep/70 sm:mt-4 sm:text-base">
+            A snapshot of real transformations from The Square Aesthetics &amp;
+            Wellness Clinic. For the full collection, follow along on Instagram.
           </p>
         </div>
 
@@ -131,14 +134,14 @@ export default function ResultsGrid({
           className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"
         >
           {results.length === 0 ? (
-            <p className="col-span-full text-center text-sm text-teal-darker/60">
+            <p className="col-span-full text-center text-sm text-chocolate-deep/60">
               Results coming soon.
             </p>
           ) : (
             results.map((item) => (
               <div
                 key={item.slug}
-                className="group relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_10px_30px_-6px_rgba(9,88,92,0.20)] ring-1 ring-inset ring-deep-teal/10 transition-shadow duration-500 hover:shadow-[0_20px_45px_-10px_rgba(9,88,92,0.4)] sm:rounded-3xl"
+                className="group relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_10px_30px_-6px_rgba(94,59,21,0.20)] ring-1 ring-inset ring-chocolate-deep/10 transition-shadow duration-500 hover:shadow-[0_20px_45px_-10px_rgba(94,59,21,0.4)] sm:rounded-3xl"
               >
                 <Image
                   src={item.image}
@@ -150,7 +153,7 @@ export default function ResultsGrid({
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-deep-teal/50 via-transparent to-transparent"
+                  className="absolute inset-0 bg-gradient-to-t from-chocolate-deep/50 via-transparent to-transparent"
                 />
               </div>
             ))
@@ -162,7 +165,7 @@ export default function ResultsGrid({
             href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-pill group bg-deep-teal text-white shadow-md shadow-deep-teal/30 transition-transform duration-300 hover:scale-[1.04] hover:bg-deep-teal/90 active:scale-[0.98]"
+            className="btn-pill group bg-chocolate text-cream shadow-md shadow-chocolate/30 transition-transform duration-300 hover:scale-[1.04] hover:bg-chocolate-deep active:scale-[0.98]"
           >
             <InstagramIcon className="h-4 w-4" />
             Show More on Instagram
@@ -174,5 +177,6 @@ export default function ResultsGrid({
         </div>
       </div>
     </main>
+    </section>
   );
 }

@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
   { label: "Results", href: "/results" },
-  { label: "Doctors", href: "/#our-doctors" },
   { label: "FAQ", href: "/faq" },
 ];
 
@@ -33,7 +32,7 @@ export default function Navbar() {
 
   // The transparent "blend with hero" look only makes sense on the home
   // page, which starts with a hero section behind the navbar. Every other
-  // route (privacy, faq, etc.) has no hero to blend with, so it stays in
+  // route (legal, faq, etc.) has no hero to blend with, so it stays in
   // the solid/glass state at all times to remain readable.
   const isHome = pathname === "/";
   const isCompact = !isHome || isScrolled || isMobileOpen;
@@ -51,7 +50,7 @@ export default function Navbar() {
         <nav
           className={`flex items-center justify-between gap-3 transition-all duration-500 ease-out ${
             isCompact
-              ? "rounded-full border border-white/50 bg-white/70 px-4 py-2.5 shadow-[0_8px_30px_-6px_rgba(9,88,92,0.25)] backdrop-blur-xl sm:px-5"
+              ? "rounded-full border border-cream/60 bg-cream/80 px-4 py-2.5 shadow-[0_8px_30px_-6px_rgba(94,59,21,0.25)] backdrop-blur-xl sm:px-5"
               : "rounded-none border-transparent bg-transparent px-2 py-4 sm:py-5"
           }`}
         >
@@ -63,7 +62,7 @@ export default function Navbar() {
           >
             <Image
               src="/logo.png"
-              alt="Aesthetic Clinic logo"
+              alt="The Square Aesthetics & Wellness Clinic logo"
               width={40}
               height={40}
               className={`transition-all duration-500 ${isCompact ? "h-7 w-7 sm:h-8 sm:w-8" : "h-9 w-9 sm:h-10 sm:w-10"}`}
@@ -71,12 +70,12 @@ export default function Navbar() {
             />
             <span
               className={`whitespace-nowrap font-display font-semibold leading-tight transition-all duration-500 ${
-                isCompact ? "text-base text-teal-darker sm:text-lg" : "text-lg text-white sm:text-xl"
+                isCompact ? "text-base text-chocolate-deep sm:text-lg" : "text-lg text-cream sm:text-xl"
               }`}
             >
-              Aesthetic{" "}
-              <span className={isCompact ? "italic text-deep-teal" : "italic text-gold-soft"}>
-                Clinic
+              The Square{" "}
+              <span className={isCompact ? "italic text-bronze" : "italic text-bronze"}>
+                Aesthetics
               </span>
             </span>
           </Link>
@@ -89,8 +88,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`whitespace-nowrap font-sans text-sm font-medium transition-colors duration-300 ${
                     isCompact
-                      ? "text-teal-darker/80 hover:text-deep-teal"
-                      : "text-white/90 hover:text-white"
+                      ? "text-chocolate-deep/80 hover:text-bronze"
+                      : "text-cream/90 hover:text-cream"
                   }`}
                 >
                   {link.label}
@@ -105,8 +104,8 @@ export default function Navbar() {
             onClick={() => setIsModalOpen(true)}
             className={`btn-pill group hidden shrink-0 whitespace-nowrap shadow-md transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] lg:inline-flex ${
               isCompact
-                ? "bg-deep-teal text-white shadow-deep-teal/30 hover:bg-deep-teal/90"
-                : "bg-white/15 text-white shadow-black/10 backdrop-blur-md hover:bg-white/25"
+                ? "bg-chocolate-deep text-cream shadow-chocolate-deep/30 hover:bg-chocolate"
+                : "bg-cream/15 text-cream shadow-black/10 backdrop-blur-md hover:bg-cream/25"
             }`}
           >
             Book Appointment
@@ -124,8 +123,8 @@ export default function Navbar() {
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 lg:hidden ${
               isCompact
-                ? "border-teal-darker/15 text-teal-darker"
-                : "border-white/40 text-white"
+                ? "border-chocolate-deep/15 text-chocolate-deep"
+                : "border-cream/40 text-cream"
             }`}
           >
             {isMobileOpen ? <X className="h-5 w-5" strokeWidth={2} /> : <Menu className="h-5 w-5" strokeWidth={2} />}
@@ -138,14 +137,14 @@ export default function Navbar() {
             isMobileOpen ? "mt-2 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
           }`}
         >
-          <div className="overflow-hidden rounded-3xl border border-white/50 bg-white/85 shadow-[0_8px_30px_-6px_rgba(9,88,92,0.25)] backdrop-blur-xl">
+          <div className="overflow-hidden rounded-3xl border border-cream/60 bg-cream/90 shadow-[0_8px_30px_-6px_rgba(94,59,21,0.25)] backdrop-blur-xl">
             <ul className="flex flex-col gap-1 px-4 pb-2 pt-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className="block rounded-xl px-3 py-2.5 font-sans text-sm font-medium text-teal-darker/85 transition-colors duration-200 hover:bg-deep-teal/5 hover:text-deep-teal"
+                    className="block rounded-xl px-3 py-2.5 font-sans text-sm font-medium text-chocolate-deep/85 transition-colors duration-200 hover:bg-bronze/10 hover:text-bronze"
                   >
                     {link.label}
                   </Link>
@@ -159,7 +158,7 @@ export default function Navbar() {
                   setIsMobileOpen(false);
                   setIsModalOpen(true);
                 }}
-                className="btn-pill group w-full justify-center bg-deep-teal text-white shadow-md shadow-deep-teal/30 active:scale-[0.98]"
+                className="btn-pill group w-full justify-center bg-chocolate-deep text-cream shadow-md shadow-chocolate-deep/30 active:scale-[0.98]"
               >
                 Book Appointment
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2} />

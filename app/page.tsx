@@ -8,7 +8,7 @@ import RealResults from "@/sections/result/page";
 import ResultsPage from "@/sections/results/page";
 import Services from "@/sections/services/page";
 
-const INSTAGRAM_URL = "https://www.instagram.com/thesquare.salon/";
+const INSTAGRAM_URL = "https://www.instagram.com/thesquareaesthetics/";
 
 export default function Home() {
   return (

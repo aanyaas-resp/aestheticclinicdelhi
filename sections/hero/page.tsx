@@ -63,21 +63,30 @@ export default function Hero() {
 
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-deep-teal">
-      {/* Background image — priority + fetchPriority high since this is the LCP element */}
+      {/* Background image — priority + fetchPriority high since this is the LCP element.
+          Mobile gets lighter brightness/saturation so the stacked overlays below
+          don't compound into a muddy, "dirty" look on small screens. */}
       <div ref={bgRef} className="absolute inset-0">
         <Image
-          src="/herobg2.png"
+          src="/gallery/galary-1-compressed.jpg"
           alt="Aesthetic Clinic — skin and hair treatment clinic interior in Rajouri Garden, Delhi"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover object-center brightness-[0.5] saturate-[0.85]"
+          className="object-cover object-center brightness-[0.65] saturate-[0.92] sm:brightness-[0.5] sm:saturate-[0.85]"
         />
       </div>
 
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-deep-teal/92 via-teal-dark/40 to-deep-teal/88" />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+      {/* Color-wash overlays — lighter on mobile, full strength from sm: up */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-br from-deep-teal/85 via-teal-dark/28 to-deep-teal/80 sm:from-deep-teal/92 sm:via-teal-dark/40 sm:to-deep-teal/88"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/5 sm:from-black/50 sm:via-transparent sm:to-black/10"
+      />
 
       <div
         aria-hidden="true"
@@ -88,9 +97,11 @@ export default function Hero() {
         className="pointer-events-none absolute -right-24 bottom-0 h-[420px] w-[420px] rounded-full bg-gold/15 blur-[120px]"
       />
 
+      {/* Film-grain texture — hidden on mobile (it just reads as visual noise
+          at small sizes/low-end screens), subtle from sm: up */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[5] opacity-[0.06] mix-blend-overlay"
+        className="pointer-events-none absolute inset-0 z-[5] hidden opacity-[0.045] mix-blend-overlay sm:block"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",

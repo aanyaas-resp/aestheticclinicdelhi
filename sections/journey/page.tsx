@@ -186,7 +186,7 @@ export default function JourneySection() {
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] ring-1 ring-inset ring-cream-text/15 sm:rounded-[24px]">
             {/* TODO: replace with a real treatment-room photo if this isn't it, e.g. "/journey/treatment.jpg" */}
             <Image
-              src="/gallery/galary-1-compressed.jpg"
+              src="/logo.png"
               alt="Dermatologist performing a skin treatment at Aesthetic Clinic, Rajouri Garden, Delhi"
               fill
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 80vw, 45vw"

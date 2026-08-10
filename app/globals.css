@@ -7,15 +7,17 @@
 @source "./sections";
 
 @theme {
-  --color-gold: #d9ad77; /* warm gold — ambient glows only */
-  --color-gold-soft: #5dd3d7; /* bright mint/teal accent — used across hovers, badges, gradients */
-  --color-teal-dark: #2fbfc4; /* primary CTA / link color */
-  --color-teal-darker: #1b3a5c; /* deep navy — headings, footer bg */
-  --color-deep-teal: #09585c; /* deep green-teal brand color — hero wash, form panel, service card bg/hover */
-  --color-cream-text: #fbf8f3; /* warm off-white — section backgrounds & light text on dark */
+  /* --- The Square Aesthetics & Wellness Clinic brand palette --- */
+  --color-ivory: #e1d6c2;          /* main background — warm ivory/beige */
+  --color-chocolate: #5e3b15;      /* primary brand — logo, headings, CTAs */
+  --color-chocolate-deep: #3f2610; /* darker chocolate — dark panels, footer */
+  --color-bronze: #8a6840;         /* secondary brown — links, hovers, icons */
+  --color-taupe: #d2c6ac;          /* marble accents — borders, dividers */
+  --color-cream: #e9e0d0;          /* soft cream — light panels, cards */
 
-  --font-display: var(--font-display-family), Georgia, serif;
-  --font-sans: var(--font-sans-family), -apple-system, system-ui, sans-serif;
+  --font-display: var(--font-display-family), Georgia, serif;   /* Playfair Display */
+  --font-sans: var(--font-sans-family), -apple-system, system-ui, sans-serif; /* Montserrat */
+  --font-accent: var(--font-accent-family), Georgia, serif;     /* Cinzel — eyebrows only */
 }
 
 @layer base {
@@ -24,15 +26,15 @@
   }
 
   body {
-    @apply bg-cream-text font-sans text-teal-darker antialiased;
+    @apply bg-ivory font-sans text-chocolate-deep antialiased;
   }
 
   ::selection {
-    @apply bg-gold-soft/30 text-teal-darker;
+    @apply bg-bronze/25 text-chocolate-deep;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-gold-soft ring-offset-2 ring-offset-cream-text;
+    @apply outline-none ring-2 ring-bronze ring-offset-2 ring-offset-ivory;
   }
 }
 
@@ -43,36 +45,36 @@
 }
 
 @layer components {
-  /* Small uppercase kicker used above every section heading */
+  /* Small caps kicker above section headings — Cinzel, wide tracking */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal-dark;
+    @apply inline-flex items-center gap-2 font-accent text-xs font-semibold uppercase tracking-[0.22em] text-bronze;
   }
   .eyebrow::before {
     content: "";
-    @apply h-px w-6 bg-teal-dark/50;
+    @apply h-px w-6 bg-bronze/50;
   }
 
-  /* Italic accent word inside headings, e.g. "About <The Square Salon>" */
+  /* Italic accent word inside headings, e.g. "Refined <Aesthetics>" */
   .accent-italic {
-    @apply font-display italic text-teal-dark;
+    @apply font-display italic text-bronze;
   }
 
   /* Pill buttons */
   .btn-pill-solid {
-    @apply btn-pill bg-teal-dark text-white shadow-md shadow-teal-dark/30 hover:bg-teal-darker;
+    @apply btn-pill bg-chocolate text-cream shadow-md shadow-chocolate/25 hover:bg-chocolate-deep;
   }
   .btn-pill-outline {
-    @apply btn-pill border-2 border-teal-darker/20 text-teal-darker hover:border-teal-dark/50 hover:bg-teal-dark/5;
+    @apply btn-pill border-2 border-chocolate/25 text-chocolate hover:border-bronze/60 hover:bg-bronze/5;
   }
 
-  /* Shared input style for glass-panel forms (Hero consultation form, BookingModal) */
+  /* Shared input style for the dark glass-panel forms (Hero consultation form, BookingModal) */
   .input-glass {
-    @apply w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:ring-2 focus:ring-gold-soft;
+    @apply w-full rounded-xl border border-cream/20 bg-cream/5 px-4 py-3 text-sm text-cream placeholder:text-cream/40 outline-none transition focus:ring-2 focus:ring-taupe;
   }
 
   /* Small round nav buttons for the mobile services scroller */
   .scroll-nav-btn {
-    @apply flex h-9 w-9 items-center justify-center rounded-full border border-deep-teal/20 bg-white text-deep-teal shadow-md shadow-deep-teal/10 transition hover:bg-deep-teal hover:text-white active:scale-95 disabled:pointer-events-none disabled:opacity-30;
+    @apply flex h-9 w-9 items-center justify-center rounded-full border border-chocolate/20 bg-cream text-chocolate shadow-md shadow-chocolate/10 transition hover:bg-chocolate hover:text-cream active:scale-95 disabled:pointer-events-none disabled:opacity-30;
   }
 
   /* Services row: horizontal snap-scroll on mobile/tablet, plain 4-col
@@ -138,8 +140,17 @@
 @layer utilities {
   /* Curved SVG handoff at the base of the hero section */
   .hero-curve {
-    @apply pointer-events-none absolute inset-x-0 bottom-0 z-6 h-10 w-full text-cream-text sm:h-16;
+    @apply pointer-events-none absolute inset-x-0 bottom-0 z-6 h-10 w-full text-ivory sm:h-16;
   }
+
+  /* Signature brand texture — soft marble veining in bronze/taupe on ivory.
+     Used sparingly as the site's one recurring visual signature. */
+  .marble-texture {
+  background-image:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(138, 104, 64, 0.18), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 85% 75%, rgba(94, 59, 21, 0.15), transparent 55%),
+    linear-gradient(115deg, transparent 42%, rgba(210, 198, 172, 0.5) 50%, transparent 58%);
+}
 
   @keyframes pingSlow {
     0% {

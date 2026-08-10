@@ -11,13 +11,14 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// TODO: swap for the founder's real credentials/highlights
 const HIGHLIGHTS = [
-  { icon: ShieldCheck, text: "Precision-led treatments backed by clinical expertise" },
-  { icon: Sparkles, text: "Skin and hair health treated as a priority, not an afterthought" },
-  { icon: Users, text: "Personalized care plans curated for every patient" },
+  { icon: ShieldCheck, text: "Years of clinical experience in skin & hair care" },
+  { icon: Sparkles, text: "Trained in advanced aesthetic and dermatology techniques" },
+  { icon: Users, text: "Personally overseeing every patient's treatment plan" },
 ];
 
-export default function About() {
+export default function Founder() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const imageColRef = useRef<HTMLDivElement>(null);
@@ -74,8 +75,8 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      id="about"
-      aria-labelledby="about-heading"
+      id="founder"
+      aria-labelledby="founder-heading"
       className="relative overflow-hidden bg-deep-teal px-6 py-20 sm:px-10 sm:py-24 lg:px-16"
     >
       <div
@@ -97,10 +98,10 @@ export default function About() {
           <div ref={imageColRef} className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] shadow-[0_16px_48px_rgba(0,0,0,0.3)] ring-1 ring-inset ring-white/10 sm:rounded-[32px]">
               <Image
-                src="/logo.png"
-                alt="Aesthetic Clinic — skin and hair care clinic interior in Rajouri Garden, Delhi"
+                src="/founder.jpg"
+                alt="Founder of Aesthetic Clinic, Rajouri Garden, Delhi"
                 fill
-                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 80vw, 45vw"
+                sizes="(max-width: 540px) 72vw, (max-width: 1024px) 60vw, 35vw"
                 className="object-cover"
                 loading="lazy"
               />
@@ -115,35 +116,38 @@ export default function About() {
                 <MapPin className="h-4.5 w-4.5 text-gold sm:h-5 sm:w-5" strokeWidth={1.75} />
               </span>
               <div className="leading-tight">
+                {/* TODO: replace with founder's name / title */}
                 <p className="font-display text-base font-semibold text-teal-darker sm:text-lg">
-                  Rajouri Garden
+                  Dr. Pooja Sahni
                 </p>
-                <p className="font-sans text-xs text-teal-darker/60">Expert-led care, one clinic</p>
+                <p className="font-sans text-xs text-teal-darker/60">Founder & Lead Physician</p>
               </div>
             </address>
           </div>
 
           {/* Copy column */}
           <div ref={copyColRef} className="mt-4 lg:mt-0">
-            <p className="eyebrow mb-4 text-gold-soft [&::before]:bg-gold-soft/50">Who We Are</p>
+            <p className="eyebrow mb-4 text-gold-soft [&::before]:bg-gold-soft/50">Meet the Founder</p>
             <h2
-              id="about-heading"
+              id="founder-heading"
               className="font-display text-[2rem] font-semibold leading-tight text-cream-text sm:text-4xl lg:text-5xl"
             >
-              About <span className="font-display italic text-gold-soft">Aesthetic Clinic</span>
+              The Vision Behind <span className="font-display italic text-gold-soft">Aesthetic Clinic</span>
             </h2>
 
+            {/* TODO: replace with the founder's real bio */}
             <p className="mt-6 font-sans text-base leading-relaxed text-cream-text/80 sm:text-lg">
-              Your skin and hair tell your story — make sure they get the care
-              they deserve. At Aesthetic Clinic, we don&apos;t follow trends,
-              we treat each patient with clinical precision. Every diagnosis,
-              every treatment plan, thoughtfully guided by our team in the
-              heart of Rajouri Garden.
+              Aesthetic Clinic was founded on a simple belief — that skin and
+              hair care deserve the same clinical precision as any other
+              branch of medicine. What began as a single vision in Rajouri
+              Garden has grown into a trusted destination for patients
+              seeking real, doctor-led results.
             </p>
             <p className="mt-4 font-sans text-base leading-relaxed text-cream-text/80 sm:text-lg">
-              From advanced hair and skin treatments to holistic wellness
-              care, every visit is built around your health and your comfort —
-              expert care, always.
+              With a career built on continuous learning and a deep respect
+              for patient care, the founder personally shaped the clinic&apos;s
+              philosophy — no trends, no shortcuts, just expert care that
+              puts your results first.
             </p>
 
             <ul className="mt-9 space-y-4">
@@ -179,16 +183,8 @@ export default function About() {
                   strokeWidth={2}
                 />
               </button>
-              <a
-                href="#our-doctors"
-                className="btn-pill group w-full justify-center border-2 border-cream-text/25 text-cream-text transition-all duration-300 hover:border-cream-text/50 hover:bg-white/5 sm:w-auto"
-              >
-                Meet Our Doctors
-                <ArrowUpRight
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  strokeWidth={2}
-                />
-              </a>
+              
+            
             </div>
           </div>
         </div>

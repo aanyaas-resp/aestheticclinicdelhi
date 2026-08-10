@@ -19,28 +19,25 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const CLINIC_WHATSAPP = "918057790577"; // TODO: confirm WhatsApp-enabled number
-const CLINIC_EMAIL = "info@aestheticclinicrg.in"; // TODO: replace with the real clinic email
+const CLINIC_NAME = "The Square Aesthetics & Wellness Clinic";
+const CLINIC_WHATSAPP = "918057790577"; // 080577 90577, WhatsApp-enabled
+const CLINIC_EMAIL = "info@thesquaresalon.in"; // TODO: confirm this is the live inbox — derived from thesquaresalon.in
 
 const CLINIC_PHONES = [{ display: "080577 90577", tel: "8057790577" }];
 
 const CLINIC_ADDRESSES = [
   {
     label: "Rajouri Garden, Delhi",
-    text: "Shop No-2, J12/13, Block J, Rajouri Garden Extension, Rajouri Garden, New Delhi, Delhi 110027",
+    text: "Shop No. 2, J-12/13, Block J, Rajouri Garden, Delhi, India - 110027",
   },
 ];
 
-// Official short link — TODO: confirm this Google Maps listing is for
-// Aesthetic Clinic and not the previous business at this address.
+// Official short link for the clinic's Google Business Profile.
 const CLINIC_MAPS_LINK = "https://maps.app.goo.gl/gm5ACAhHxdnQjrga9";
 
 const GENDERS = ["Male", "Female"];
-const DEPARTMENTS = ["Laser Hair Reduction", "Skin Aesthetics", "Hair Restoration", "Body Lab", "Other"];
+const DEPARTMENTS = ["Laser Treatments", "Skin Treatments", "Hair Treatments", "Botox", "Filler", "PRP", "Other"];
 
-// TODO: this embed still resolves to the previous business's Google
-// listing (place name in the URL) — swap for Aesthetic Clinic's own
-// embed once the GMB listing is set up, so the map pin matches the name.
 const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14006.615948808627!2d77.1188865!3d28.6401307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d035c49b138f7%3A0x19f6fb39c8a9f081!2sThe%20Square%20Salon!5e0!3m2!1sen!2sin!4v1786298766205!5m2!1sen!2sin";
 
@@ -111,7 +108,7 @@ export default function Contact() {
     setError("");
 
     const lines = [
-      "Hi, I'd like to get in touch with Aesthetic Clinic.",
+      `Hi, I'd like to get in touch with ${CLINIC_NAME}.`,
       "",
       `Name: ${trimmedName}`,
       `Mobile: ${trimmedMobile}`,
@@ -134,20 +131,20 @@ export default function Contact() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-teal-darker/15 bg-white py-3 pl-11 pr-4 text-sm text-teal-darker placeholder:text-teal-darker/40 outline-none transition-colors duration-200 focus:border-gold-soft focus:ring-2 focus:ring-gold-soft/30";
+    "w-full rounded-xl border border-chocolate-deep/15 bg-cream py-3 pl-11 pr-4 text-sm text-chocolate-deep placeholder:text-chocolate-deep/40 outline-none transition-colors duration-200 focus:border-bronze focus:ring-2 focus:ring-bronze/30";
   const selectClass =
-    "w-full appearance-none rounded-xl border border-teal-darker/15 bg-white py-3 pl-11 pr-9 text-sm text-teal-darker outline-none transition-colors duration-200 focus:border-gold-soft focus:ring-2 focus:ring-gold-soft/30";
+    "w-full appearance-none rounded-xl border border-chocolate-deep/15 bg-cream py-3 pl-11 pr-9 text-sm text-chocolate-deep outline-none transition-colors duration-200 focus:border-bronze focus:ring-2 focus:ring-bronze/30";
 
   return (
-    <section ref={sectionRef} id="contact" className="bg-cream-text px-6 py-24 sm:px-10 lg:px-16">
+    <section ref={sectionRef} id="contact" className="bg-ivory px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <div ref={headingWrapRef} className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow mb-4">Get In Touch</p>
-          <h2 className="font-display text-3xl font-semibold leading-snug text-teal-darker sm:text-4xl lg:text-5xl">
+          <p className="eyebrow mb-4 justify-center">Get In Touch</p>
+          <h2 className="font-display text-3xl font-semibold leading-snug text-chocolate-deep sm:text-4xl lg:text-5xl">
             Contact <span className="accent-italic">Us</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-teal-darker/70">
-            Have a question or ready to book? Reach out and our team will get back to you shortly.
+          <p className="mt-4 text-base leading-relaxed text-chocolate-deep/70">
+            Have a question or ready to book your consultation? Reach out and our team will get back to you shortly.
           </p>
         </div>
 
@@ -159,14 +156,14 @@ export default function Contact() {
                   cardRefs.current[0] = el;
                 }}
                 href={`mailto:${CLINIC_EMAIL}`}
-                className="group flex items-start gap-4 rounded-2xl border border-teal-darker/10 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-soft/60 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
+                className="group flex items-start gap-4 rounded-2xl border border-chocolate-deep/10 bg-cream/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-bronze/60 hover:shadow-[0_10px_28px_rgba(94,59,21,0.12)]"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-darker/5 transition-colors duration-300 group-hover:bg-gold-soft">
-                  <Mail className="h-4 w-4 text-gold-soft transition-colors duration-300 group-hover:text-teal-darker" strokeWidth={1.75} />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-chocolate-deep/5 transition-colors duration-300 group-hover:bg-bronze">
+                  <Mail className="h-4 w-4 text-bronze transition-colors duration-300 group-hover:text-cream" strokeWidth={1.75} />
                 </span>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-teal-darker/50">Email</p>
-                  <p className="mt-1 text-sm font-medium text-teal-darker sm:text-base">{CLINIC_EMAIL}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-chocolate-deep/50">Email</p>
+                  <p className="mt-1 text-sm font-medium text-chocolate-deep sm:text-base">{CLINIC_EMAIL}</p>
                 </div>
               </a>
 
@@ -174,17 +171,17 @@ export default function Contact() {
                 ref={(el) => {
                   cardRefs.current[1] = el;
                 }}
-                className="rounded-2xl border border-teal-darker/10 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-soft/60 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
+                className="rounded-2xl border border-chocolate-deep/10 bg-cream/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-bronze/60 hover:shadow-[0_10px_28px_rgba(94,59,21,0.12)]"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-darker/5">
-                    <Phone className="h-4 w-4 text-gold-soft" strokeWidth={1.75} />
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-chocolate-deep/5">
+                    <Phone className="h-4 w-4 text-bronze" strokeWidth={1.75} />
                   </span>
                   <div className="w-full">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-teal-darker/50">Phone</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-chocolate-deep/50">Phone</p>
                     <div className="mt-1 flex flex-col gap-1">
                       {CLINIC_PHONES.map((p) => (
-                        <a key={p.tel} href={`tel:+91${p.tel}`} className="text-sm font-medium text-teal-darker transition-colors hover:text-gold-soft sm:text-base">
+                        <a key={p.tel} href={`tel:+91${p.tel}`} className="text-sm font-medium text-chocolate-deep transition-colors hover:text-bronze sm:text-base">
                           {p.display}
                         </a>
                       ))}
@@ -199,19 +196,19 @@ export default function Contact() {
                   ref={(el) => {
                     cardRefs.current[2 + i] = el;
                   }}
-                  className="group flex items-start gap-4 rounded-2xl border border-teal-darker/10 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-soft/60 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
+                  className="group flex items-start gap-4 rounded-2xl border border-chocolate-deep/10 bg-cream/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-bronze/60 hover:shadow-[0_10px_28px_rgba(94,59,21,0.12)]"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-darker/5 transition-colors duration-300 group-hover:bg-gold-soft">
-                    <MapPin className="h-4 w-4 text-gold-soft transition-colors duration-300 group-hover:text-teal-darker" strokeWidth={1.75} />
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-chocolate-deep/5 transition-colors duration-300 group-hover:bg-bronze">
+                    <MapPin className="h-4 w-4 text-bronze transition-colors duration-300 group-hover:text-cream" strokeWidth={1.75} />
                   </span>
                   <div className="w-full">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-teal-darker/50">{addr.label}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-teal-darker sm:text-base">{addr.text}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-chocolate-deep/50">{addr.label}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-chocolate-deep sm:text-base">{addr.text}</p>
                     <a
                       href={CLINIC_MAPS_LINK || directionsUrl(addr.text)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-gold-soft transition-colors hover:text-teal-darker"
+                      className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-bronze transition-colors hover:text-chocolate-deep"
                     >
                       <Navigation className="h-3.5 w-3.5" strokeWidth={2} />
                       Get Directions
@@ -224,26 +221,26 @@ export default function Contact() {
                 ref={(el) => {
                   cardRefs.current[3] = el;
                 }}
-                className="group flex items-start gap-4 rounded-2xl border border-teal-darker/10 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-soft/60 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
+                className="group flex items-start gap-4 rounded-2xl border border-chocolate-deep/10 bg-cream/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-bronze/60 hover:shadow-[0_10px_28px_rgba(94,59,21,0.12)]"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-darker/5 transition-colors duration-300 group-hover:bg-gold-soft">
-                  <Clock className="h-4 w-4 text-gold-soft transition-colors duration-300 group-hover:text-teal-darker" strokeWidth={1.75} />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-chocolate-deep/5 transition-colors duration-300 group-hover:bg-bronze">
+                  <Clock className="h-4 w-4 text-bronze transition-colors duration-300 group-hover:text-cream" strokeWidth={1.75} />
                 </span>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-teal-darker/50">Clinic Hours</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-chocolate-deep/50">Clinic Hours</p>
                   {/* TODO: confirm exact closing time — opening time (10:30 AM) is confirmed */}
-                  <p className="mt-1 text-sm leading-relaxed text-teal-darker sm:text-base">Open daily from 10:30 AM</p>
+                  <p className="mt-1 text-sm leading-relaxed text-chocolate-deep sm:text-base">Open daily from 10:30 AM</p>
                 </div>
               </div>
             </div>
 
             <div
               ref={mapRef}
-              className="mt-6 aspect-[4/3] w-full overflow-hidden rounded-3xl border border-teal-darker/10 shadow-[0_8px_28px_rgba(0,0,0,0.1)]"
+              className="mt-6 aspect-[4/3] w-full overflow-hidden rounded-3xl border border-chocolate-deep/10 shadow-[0_8px_28px_rgba(94,59,21,0.15)]"
             >
               <iframe
                 src={MAP_EMBED_SRC}
-                title="Aesthetic Clinic location map"
+                title={`${CLINIC_NAME} location map`}
                 className="h-full w-full border-0"
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -255,16 +252,16 @@ export default function Contact() {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="rounded-3xl border border-teal-darker/10 bg-white/70 p-6 shadow-[0_10px_30px_-6px_rgba(27,58,92,0.1)] sm:p-8"
+              className="rounded-3xl border border-chocolate-deep/10 bg-cream/70 p-6 shadow-[0_10px_30px_-6px_rgba(94,59,21,0.15)] sm:p-8"
             >
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="relative sm:col-span-2">
-                  <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                   <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" className={inputClass} />
                 </div>
 
                 <div className="relative">
-                  <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                   <input
                     type="tel"
                     inputMode="numeric"
@@ -276,12 +273,12 @@ export default function Contact() {
                 </div>
 
                 <div className="relative">
-                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email (optional)" className={inputClass} />
                 </div>
 
                 <div className="relative">
-                  <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                   <select value={gender} onChange={(e) => setGender(e.target.value)} className={selectClass}>
                     {GENDERS.map((g) => (
                       <option key={g} value={g}>
@@ -289,11 +286,11 @@ export default function Contact() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                 </div>
 
                 <div className="relative">
-                  <MessageSquare className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <MessageSquare className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                   <select value={department} onChange={(e) => setDepartment(e.target.value)} className={selectClass}>
                     {DEPARTMENTS.map((d) => (
                       <option key={d} value={d}>
@@ -301,11 +298,11 @@ export default function Contact() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/40" strokeWidth={1.75} />
+                  <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-chocolate-deep/40" strokeWidth={1.75} />
                 </div>
 
                 <div className="relative sm:col-span-2">
-                  <MessageSquare className="pointer-events-none absolute left-4 top-4 h-4 w-4 text-teal-darker/40" strokeWidth={1.75} />
+                  <MessageSquare className="pointer-events-none absolute left-4 top-4 h-4 w-4 text-chocolate-deep/40" strokeWidth={1.75} />
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -318,7 +315,7 @@ export default function Contact() {
 
               {error && <p className="mt-4 text-sm font-medium text-red-600">{error}</p>}
               {submitted && !error && (
-                <p className="mt-4 text-sm font-medium text-teal-dark">
+                <p className="mt-4 text-sm font-medium text-emerald-700">
                   Thanks! We&apos;ve opened WhatsApp so you can send your details.
                 </p>
               )}

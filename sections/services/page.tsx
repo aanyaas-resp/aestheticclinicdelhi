@@ -22,15 +22,8 @@ type Category = {
   tabLabel: string;
   eyebrow: string;
   heading: string;
-  accent: "gold" | "teal" | "deep";
   subheading: string;
   items: Treatment[];
-};
-
-const ACCENT_CLASSES: Record<Category["accent"], { tag: string; ring: string }> = {
-  gold: { tag: "text-gold-soft", ring: "focus-visible:ring-gold-soft" },
-  teal: { tag: "text-teal-dark", ring: "focus-visible:ring-teal-dark" },
-  deep: { tag: "text-gold-soft", ring: "focus-visible:ring-deep-teal" },
 };
 
 const CATEGORIES: Category[] = [
@@ -39,7 +32,6 @@ const CATEGORIES: Category[] = [
     tabLabel: "Laser Hair Reduction",
     eyebrow: "Our Treatments",
     heading: "Laser Hair Reduction Treatments",
-    accent: "gold",
     subheading:
       "USA FDA-approved laser hair reduction for every area of the body — hover or tap a card for details.",
     items: [
@@ -58,7 +50,6 @@ const CATEGORIES: Category[] = [
     tabLabel: "Skin Aesthetics",
     eyebrow: "Clinical Expertise",
     heading: "Skin Aesthetics",
-    accent: "gold",
     subheading:
       "Dermatology-led rejuvenation for acne, pigmentation, tone and texture — precision care suited to Indian skin.",
     items: [
@@ -76,7 +67,6 @@ const CATEGORIES: Category[] = [
     tabLabel: "Hair Restoration",
     eyebrow: "Clinical Expertise",
     heading: "Hair Restoration",
-    accent: "teal",
     subheading:
       "Clinical scalp and hair therapies built to stop shedding, encourage regrowth and bring back density and shine.",
     items: [
@@ -92,7 +82,6 @@ const CATEGORIES: Category[] = [
     tabLabel: "Body Lab",
     eyebrow: "Clinical Expertise",
     heading: "Body Lab",
-    accent: "deep",
     subheading:
       "Non-surgical contouring, fat reduction and medically guided wellness plans built for results that last.",
     items: [
@@ -153,11 +142,9 @@ function useActiveOnCenter<T extends HTMLElement>(count: number) {
 
 function TreatmentRow({
   items,
-  accent,
   onBook,
 }: {
   items: Treatment[];
-  accent: Category["accent"];
   onBook: (title: string) => void;
 }) {
   const rowRef = useRef<HTMLDivElement>(null);
@@ -165,7 +152,6 @@ function TreatmentRow({
   const { refs: activeRefs, activeIndex } = useActiveOnCenter<HTMLDivElement>(items.length);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
-  const accentClasses = ACCENT_CLASSES[accent];
 
   function setRefs(el: HTMLDivElement | null, i: number) {
     cardRefs.current[i] = el;
@@ -222,48 +208,52 @@ function TreatmentRow({
           <div
             key={t.slug}
             ref={(el) => setRefs(el, i)}
-            className={`service-card group relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[0_10px_30px_-6px_rgba(9,88,92,0.25)] transition-shadow duration-500 hover:shadow-[0_20px_45px_-10px_rgba(9,88,92,0.45)] ${
+            className={`service-card group relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[0_10px_30px_-6px_rgba(94,59,21,0.25)] transition-shadow duration-500 hover:shadow-[0_20px_45px_-10px_rgba(94,59,21,0.45)] ${
               activeIndex === i ? "is-active" : ""
             }`}
           >
             <div className="absolute inset-0">
               <Image
                 src={t.image}
-                alt={`${t.title} at Aesthetic Clinic, Rajouri Garden, Delhi`}
+                alt={`${t.title} at The Square Aesthetics & Wellness Clinic, Rajouri Garden, Delhi`}
                 fill
                 sizes="(max-width: 1024px) 78vw, 25vw"
                 className="service-media-img object-cover"
               />
             </div>
 
+            {/* Resting-state gradient: only strong enough at the very
+                bottom to keep the label legible — most of the photo
+                stays visible instead of getting washed out. */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-t from-deep-teal/90 via-deep-teal/20 to-transparent"
+              className="absolute inset-0 bg-gradient-to-t from-chocolate-deep/75 via-chocolate-deep/10 to-transparent"
             />
 
             <div className="service-label absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-5">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-white/90">{t.label}</p>
-                <p className="text-sm text-white/70">
-                  {t.price ? `₹${t.price} onwards` : "Consultation based"}
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-cream/90">{t.label}</p>
+               
               </div>
             </div>
 
-            <div className="service-overlay absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-deep-teal via-deep-teal/95 to-deep-teal/70 p-6">
-              <h3 className="font-display text-xl font-semibold leading-snug text-white">
+            {/* Hover / active overlay: eased back from a near-solid fill
+                to a gradient that stays dark where the text sits (bottom
+                ~2/3) but lets the top of the photo show through. */}
+            <div className="service-overlay absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-chocolate-deep/95 via-chocolate-deep/85 to-chocolate-deep/15 p-6">
+              <h3 className="font-display text-xl font-semibold leading-snug text-cream">
                 {t.title.replace(/ LHR Treatment$/, "")}
               </h3>
-              <p className={`mt-1 text-xs font-semibold uppercase tracking-wider ${accentClasses.tag}`}>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-bronze">
                 {t.tagline}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-white/80 line-clamp-4">{t.description}</p>
+              <p className="mt-3 text-sm leading-relaxed text-cream/80 line-clamp-4">{t.description}</p>
 
               <div className="mt-5 flex items-center gap-3">
                 <button
                   type="button"
                   onClick={() => onBook(t.title)}
-                  className={`rounded-full bg-gold px-4 py-2 text-xs font-semibold text-teal-darker shadow-md shadow-black/20 transition-transform duration-200 hover:scale-[1.04] hover:bg-gold/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${accentClasses.ring}`}
+                  className="rounded-full bg-bronze px-4 py-2 text-xs font-semibold text-cream shadow-md shadow-chocolate-deep/30 transition-transform duration-200 hover:scale-[1.04] hover:bg-chocolate active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-bronze"
                 >
                   Book Now
                 </button>
@@ -323,7 +313,7 @@ export default function Services() {
   }, [activeCategory]);
 
   return (
-    <section id="services" className="bg-cream-text px-6 py-24 sm:px-10 lg:px-16">
+    <section id="services" className="bg-ivory px-6 py-24 sm:px-10 lg:px-16">
       {/* Structured data — lets search engines see every treatment even
           though the UI only ever renders one category's cards at a time. */}
       <script
@@ -334,12 +324,12 @@ export default function Services() {
 
       <div className="mx-auto max-w-7xl">
         <div ref={headingWrapRef} className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow mb-4">{current.eyebrow}</p>
-          <h2 className="font-display text-3xl font-semibold leading-snug text-teal-darker sm:text-4xl lg:text-5xl">
+          <p className="eyebrow mb-4 justify-center">{current.eyebrow}</p>
+          <h2 className="font-display text-3xl font-semibold leading-snug text-chocolate-deep sm:text-4xl lg:text-5xl">
             {current.heading.split(" ").slice(0, -1).join(" ")}{" "}
             <span className="accent-italic">{current.heading.split(" ").slice(-1)}</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-teal-darker/70">{current.subheading}</p>
+          <p className="mt-4 text-base leading-relaxed text-chocolate-deep/70">{current.subheading}</p>
         </div>
 
         <div
@@ -360,8 +350,8 @@ export default function Services() {
                 onClick={() => setActiveCategory(c.id)}
                 className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors duration-200 sm:text-sm ${
                   isActive
-                    ? "border-deep-teal bg-deep-teal text-white shadow-md shadow-deep-teal/25"
-                    : "border-teal-darker/20 bg-transparent text-teal-darker/70 hover:border-deep-teal/40 hover:text-teal-darker"
+                    ? "border-chocolate bg-chocolate text-cream shadow-md shadow-chocolate/25"
+                    : "border-chocolate-deep/20 bg-transparent text-chocolate-deep/70 hover:border-bronze/50 hover:text-chocolate-deep"
                 }`}
               >
                 {c.tabLabel}
@@ -376,14 +366,14 @@ export default function Services() {
           id={`panel-${current.id}`}
           aria-labelledby={`tab-${current.id}`}
         >
-          <TreatmentRow key={current.id} items={current.items} accent={current.accent} onBook={openBooking} />
+          <TreatmentRow key={current.id} items={current.items} onBook={openBooking} />
         </div>
 
         {/* Visually hidden, crawler/screen-reader visible list of every
             treatment across all categories — keeps full service coverage
             indexable without disturbing the tabbed UI. */}
         <div className="sr-only">
-          <h3>All treatments at Aesthetic Clinic, Rajouri Garden</h3>
+          <h3>All treatments at The Square Aesthetics & Wellness Clinic, Rajouri Garden</h3>
           <ul>
             {ALL_TREATMENTS.map((t) => (
               <li key={t.slug}>
