@@ -19,7 +19,7 @@ export default function RealResults() {
               your public/ folder — check with `ls public/` in your terminal)
             */}
             <Image
-              src="/result.png"
+              src="/results/result6.jpg"
               alt="Before and after skin treatment results at Aesthetic Clinic, Rajouri Garden, Delhi"
               fill
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 80vw, 45vw"

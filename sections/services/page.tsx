@@ -28,53 +28,34 @@ type Category = {
 
 const CATEGORIES: Category[] = [
   {
-    id: "lhr",
-    tabLabel: "Laser Hair Reduction",
-    eyebrow: "Our Treatments",
-    heading: "Laser Hair Reduction Treatments",
-    subheading:
-      "USA FDA-approved laser hair reduction for every area of the body — hover or tap a card for details.",
-    items: [
-      { slug: "upper-lips", image: "/services/upperlips-compressed.jpg", label: "UPPER LIPS", title: "Upperlips LHR Treatment", price: "999", tagline: "SMOOTH SKIN", description: "A gentle, pain-free laser session for the upper lip using FDA-cleared technology — noticeably smoother skin within just a few visits." },
-      { slug: "chin-sidelocks", image: "/services/chin-compressed.jpg", label: "CHIN / SIDELOCKS", title: "Chin / Sidelocks LHR Treatment", price: "2500", tagline: "SMOOTH SKIN", description: "Focused laser sessions for the chin and sidelocks area that thin out hair growth over time with very little discomfort." },
-      { slug: "full-face", image: "/services/fullface-compressed.jpg", label: "FULL FACE", title: "Face LHR Treatment", price: "2999", tagline: "SMOOTH SKIN", description: "Full-face laser hair reduction designed to keep skin consistently smooth and even-toned, session after session." },
-      { slug: "underarms", image: "/services/underarms-compressed.jpg", label: "UNDERARMS", title: "Underarms LHR Treatment", price: "2999", tagline: "SMOOTH SKIN", description: "Quick underarm sessions built for busy schedules, with lasting hair reduction and zero downtime." },
-      { slug: "full-arms", image: "/services/fullarms-compressed.jpg", label: "FULL ARMS", title: "Full Arms LHR Treatment", price: "7999", tagline: "SMOOTH SKIN", description: "A complete arm treatment plan adjusted to your skin tone and hair texture for even, lasting results." },
-      { slug: "full-legs", image: "/services/fulllegs-compressed.jpg", label: "FULL LEGS", title: "Full Legs LHR Treatment", price: "7999", tagline: "SMOOTH SKIN", description: "Full-leg laser sessions that leave skin silky and hair-free, with results that build session over session." },
-      { slug: "half-body", image: "/services/halfbody-compressed.jpg", label: "HALF BODY", title: "Half Body LHR Treatment", price: "5999", tagline: "SMOOTH SKIN", description: "A bundled package across key areas — an efficient, wallet-friendly way to start your laser hair reduction journey." },
-      { slug: "full-body", image: "/services/fullbody-compressed.jpg", label: "FULL BODY", title: "Full Body LHR Treatment", price: "8999", tagline: "SMOOTH SKIN", description: "Our most complete plan — full-body laser hair reduction for lasting, all-over smoothness." },
-    ],
-  },
-  {
     id: "skin",
     tabLabel: "Skin Aesthetics",
     eyebrow: "Clinical Expertise",
     heading: "Skin Aesthetics",
     subheading:
-      "Dermatology-led rejuvenation for acne, pigmentation, tone and texture — precision care suited to Indian skin.",
+      "Dermatology-led rejuvenation for texture, tone and skin health — precision care suited to Indian skin.",
     items: [
-      { slug: "acne-scars", image: "/services/acne-compressed.jpg", label: "ACNE & ACNE SCARS", title: "Acne & Acne Scars", tagline: "CLEAR SKIN", description: "CO2 laser resurfacing paired with medical peels to settle active breakouts and soften deep scarring over time." },
-      { slug: "anti-aging", image: "/services/antiaging-compressed.jpg", label: "ANTI-AGING", title: "Anti-Aging", tagline: "FACIAL CONTOURING", description: "Non-surgical HIFU and thread-based lifting to firm the skin, ease fine lines and bring back facial definition." },
-      { slug: "skin-whitening", image: "/services/skin-whitening-compressed.jpg", label: "SKIN WHITENING", title: "Skin Whitening & Glow", tagline: "VITAMIN INFUSION", description: "Medical-grade brightening infusions and toning sessions, supervised by experts, for a more even and radiant complexion." },
-      { slug: "pigmentation", image: "/services/pigmentation-compressed.jpg", label: "PIGMENTATION", title: "Pigmentation & Melasma", tagline: "EVEN TONE", description: "Precision laser therapy and custom peels aimed at fading stubborn dark spots and melasma for a more balanced tone." },
-      { slug: "korean-glass-skin", image: "/services/koreanglass-compressed.jpg", label: "KOREAN GLASS SKIN", title: "Korean Glass Skin", tagline: "DEWY GLOW", description: "Deep-hydration facials and collagen-focused protocols that build toward that signature dewy, mirror-like finish." },
-      { slug: "hydrafacial", image: "/services/hydrafacial-compressed.jpg", label: "HYDRAFACIAL", title: "HydraFacial", tagline: "DEEP CLEANSE", description: "A three-step medical-grade facial that clears out impurities and locks in hydration for instantly brighter skin." },
-      { slug: "open-pores", image: "/services/open-poars-compressed.jpg", label: "OPEN PORES", title: "Open Pores", tagline: "RESURFACING", description: "Microneedling combined with resurfacing peels to refine texture and visibly tighten enlarged pores." },
+      { slug: "dermapen-4", image: "/services2/dermapen4-compressed.jpg", label: "DERMAPEN 4", title: "Dermapen 4", tagline: "MICRONEEDLING", description: "Advanced medical microneedling that stimulates collagen production to refine texture, scarring and overall skin quality." },
+      { slug: "dermaplaning", image: "/services2/dermaplaning-compressed.jpg", label: "DERMAPLANING", title: "Dermaplaning", tagline: "INSTANT SMOOTHNESS", description: "A gentle exfoliation treatment that sweeps away dead skin and peach fuzz for an immediately smoother, brighter surface." },
+      { slug: "tag-removal", image: "/services2/tanremoval-compressed.jpg", label: "TAG REMOVAL", title: "Tag Removal", tagline: "PRECISION CARE", description: "Safe, precise removal of skin tags using medical-grade techniques, performed under expert supervision." },
+      { slug: "wart-removal", image: "/services2/wartremoval-compressed.jpg", label: "WART REMOVAL", title: "Wart Removal", tagline: "PRECISION CARE", description: "Clinically guided wart removal designed to clear growths effectively with minimal discomfort and downtime." },
+      { slug: "skin-whitening-pigmentation", image: "/services2/skinwhiteningandpigmentation-compressed.jpg", label: "SKIN WHITENING & PIGMENTATION", title: "Skin Whitening & Pigmentation", tagline: "EVEN, RADIANT TONE", description: "Medical-grade brightening combined with precision laser and peel therapy to fade pigmentation and even out skin tone." },
+      { slug: "under-eye-treatment", image: "/services2/undereye-compressed.jpg", label: "UNDER EYE TREATMENT", title: "Under-Eye Treatment", tagline: "BRIGHT & REFRESHED", description: "Targeted therapy for dark circles, puffiness and fine lines to refresh and brighten the delicate under-eye area." },
+      { slug: "salmon-dna", image: "/services2/salmon-compressed.jpg", label: "SALMON DNA", title: "Salmon DNA", tagline: "SKIN REGENERATION", description: "PDRN-based bio-regeneration therapy that boosts hydration, elasticity and repair for firmer, revitalised skin." },
+      { slug: "hifu", image: "/services2/hifu-compressed.jpg", label: "HIFU", title: "HIFU", tagline: "NON-SURGICAL LIFT", description: "High-intensity focused ultrasound that lifts and firms by triggering deep collagen renewal, with no downtime." },
     ],
   },
   {
-    id: "hair",
-    tabLabel: "Hair Restoration",
+    id: "anti-ageing",
+    tabLabel: "Anti-Ageing",
     eyebrow: "Clinical Expertise",
-    heading: "Hair Restoration",
+    heading: "Anti-Ageing",
     subheading:
-      "Clinical scalp and hair therapies built to stop shedding, encourage regrowth and bring back density and shine.",
+      "Injectable and regenerative protocols that firm, hydrate and restore facial definition over time.",
     items: [
-      { slug: "hairfall-treatment", image: "/services/hairfalltreatment-compressed.jpg", label: "HAIRFALL TREATMENT", title: "Hairfall Treatment", tagline: "STOP LOSS", description: "We diagnose the root cause first, then build a medical plan to slow shedding and rebuild density from the scalp up." },
-      { slug: "prp-therapy", image: "/services/prptheropy-compressed.jpg", label: "PRP THERAPY", title: "PRP Therapy", tagline: "REGROWTH", description: "Platelet-rich plasma sessions that put your own growth factors to work on thinning areas and early hair loss." },
-      { slug: "regrowth-gfc", image: "/services/regrowth-compressed.jpg", label: "REGROWTH & GFC", title: "Regrowth & GFC", tagline: "FOLLICLE STIMULATION", description: "Growth Factor Concentrate sessions that stir dormant follicles back to life and visibly thicken hair over a course of treatments." },
-      { slug: "dandruff-control", image: "/services/dandruff-compressed.jpg", label: "DANDRUFF CONTROL", title: "Dandruff Control", tagline: "SCALP HEALTH", description: "A medical-grade scalp reset that calms itching, clears flaking and restores a genuinely healthy scalp." },
-      { slug: "strengthening", image: "/services/strengthening-compressed.jpg", label: "STRENGTHENING", title: "Strengthening", tagline: "SPA THERAPY", description: "Deep-conditioning spa sessions that repair dry, brittle strands and bring back natural shine." },
+      { slug: "stunox", image: "/services2/stunox-compressed.jpg", label: "STUNOX", title: "Stunox", tagline: "COLLAGEN RENEWAL", description: "An advanced anti-aging treatment that stimulates collagen renewal to firm the skin and soften visible signs of aging." },
+      { slug: "skin-booster", image: "/services2/skinbooster-compressed.jpg", label: "SKIN BOOSTER", title: "Skin Booster", tagline: "DEEP HYDRATION", description: "Injectable hyaluronic acid boosters that hydrate from within for plump, smooth and naturally glowing skin." },
+      { slug: "profhilo", image: "/services2/profhilo-compressed.jpg", label: "PROFHILO", title: "Profhilo", tagline: "BIO-REMODELLING", description: "A next-generation bio-remodelling injectable that improves skin laxity, hydration and overall firmness." },
     ],
   },
   {
@@ -83,15 +64,38 @@ const CATEGORIES: Category[] = [
     eyebrow: "Clinical Expertise",
     heading: "Body Lab",
     subheading:
-      "Non-surgical contouring, fat reduction and medically guided wellness plans built for results that last.",
+      "Non-surgical contouring and tone-evening treatments for the body, built for results that last.",
     items: [
-      { slug: "exilis", image: "/services/exilis-compressed.jpg", label: "EXILIS", title: "Exilis", tagline: "SKIN TIGHTENING", description: "Radiofrequency energy that firms skin and softens stubborn fat pockets by triggering fresh collagen production." },
-      { slug: "cryolipolysis", image: "/services/cryolipolysis-compressed.jpg", label: "CRYOLIPOLYSIS", title: "Cryolipolysis", tagline: "FAT FREEZING", description: "Controlled cooling that targets stubborn fat cells directly for lasting inch loss — no surgery involved." },
-      { slug: "lypolysis", image: "/services/lypolysis-compressed.jpg", label: "LYPOLYSIS", title: "Lypolysis", tagline: "FAT REDUCTION", description: "Localised fat-reduction sessions for the chin, arms, tummy and thighs, tailored around your goals." },
-      { slug: "hifu", image: "/services/hifu-compressed.jpg", label: "HIFU", title: "HIFU", tagline: "NON-SURGICAL LIFT", description: "High-intensity focused ultrasound that lifts and firms by triggering deep collagen renewal, with no downtime." },
-      { slug: "medical-weight-loss", image: "/services/medicalweightloss-compressed.jpg", label: "MEDICAL WEIGHT LOSS", title: "Medical Weight Loss", tagline: "DOCTOR SUPERVISED", description: "A physician-led evaluation paired with a diet and treatment plan built around safe, sustainable results." },
-      { slug: "iv-drips", image: "/services/ivdrips-compressed.jpg", label: "IV DRIPS", title: "IV Drips", tagline: "VITAMIN INFUSION", description: "Medically supervised nutrient infusions that support energy levels, immunity and hydration." },
-      { slug: "nutrition-diet", image: "/services/nutritions-compressed.jpg", label: "NUTRITION & DIET", title: "Nutrition & Diet", tagline: "CUSTOM PLANS", description: "Personalised nutrition guidance that supports your weight goals, skin health and long-term wellbeing." },
+      { slug: "rf", image: "/services2/rf-compressed.jpg", label: "RF", title: "RF", tagline: "SKIN TIGHTENING", description: "Radiofrequency energy that firms skin and softens stubborn fat pockets by triggering fresh collagen production." },
+      { slug: "body-tan-removal", image: "/services2/bodytan-compressed.jpg", label: "BODY TAN REMOVAL", title: "Body Tan Removal", tagline: "EVEN TONE", description: "Brightening treatments that lift tan lines and uneven tone, restoring a more consistent, radiant skin tone across the body." },
+      { slug: "pigmentation-whitening", image: "/services2/pigmentation-compressed.jpg", label: "PIGMENTATION & WHITENING", title: "Pigmentation & Whitening", tagline: "EVEN TONE", description: "Targeted brightening treatments for the body that fade pigmentation and uneven tone for a more radiant finish." },
+      { slug: "body-polishing", image: "/services2/bodypolishing-compressed.jpg", label: "BODY POLISHING", title: "Body Polishing", tagline: "SMOOTH & GLOW", description: "Full-body exfoliation and moisturising therapy that buffs away dullness for instantly softer, glowing skin." },
+    ],
+  },
+  {
+    id: "medifacial",
+    tabLabel: "MediFacial",
+    eyebrow: "Clinical Expertise",
+    heading: "MediFacial",
+    subheading:
+      "Layered medical-grade facials that cleanse, hydrate and sculpt for a healthy, lasting glow.",
+    items: [
+      { slug: "hydrafacial", image: "/services2/hydrafacial-compressed.jpg", label: "HYDRAFACIAL", title: "HydraFacial", tagline: "DEEP CLEANSE", description: "A three-step medical-grade facial that clears out impurities and locks in hydration for instantly brighter skin." },
+      { slug: "thermal-sculpting-facial", image: "/services2/thermal-compressed.jpg", label: "THERMAL SCULPTING FACIAL", title: "Thermal Sculpting Facial", tagline: "CONTOUR & LIFT", description: "Heat-based contouring therapy that firms facial contours and stimulates collagen for a lifted, sculpted look." },
+      { slug: "fire-ice", image: "/services2/fireandice-compressed.jpg", label: "FIRE & ICE", title: "Fire & Ice", tagline: "RESURFACE & CALM", description: "A dual-action facial that resurfaces with a warming exfoliant, then calms and cools for smooth, refreshed skin." },
+      { slug: "obagi", image: "/services2/obagi-compressed.jpg", label: "OBAGI", title: "Obagi", tagline: "MEDICAL SKINCARE", description: "Clinically formulated Obagi protocols that correct tone, texture and signs of aging through guided medical-grade skincare." },
+    ],
+  },
+  {
+    id: "hair",
+    tabLabel: "Hair Restoration",
+    eyebrow: "Clinical Expertise",
+    heading: "Hair Restoration",
+    subheading:
+      "Advanced scalp therapies built to reactivate follicles and support thicker, healthier regrowth.",
+    items: [
+      { slug: "nano-bull-hair-wash", image: "/services2/nanobullhair-compressed.jpg", label: "NANO BULL HAIR WASH", title: "Nano Bull Hair Wash", tagline: "SCALP DETOX", description: "A specialised nano-formula scalp wash that deep-cleanses buildup and preps the scalp for better treatment absorption." },
+      { slug: "exosomes", image: "/services2/exosomes-compressed.jpg", label: "EXOSOMES", title: "Exosomes", tagline: "CELLULAR REGROWTH", description: "Advanced exosome therapy that signals dormant follicles to reactivate, supporting thicker, healthier regrowth." },
     ],
   },
 ];

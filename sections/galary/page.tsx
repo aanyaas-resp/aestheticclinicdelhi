@@ -16,26 +16,33 @@ type GalleryItem = {
   caption: string;
 };
 
+// Ordered to match how a first-time visitor moves through the clinic:
+// reception first, then the waiting area, then the treatment rooms.
 const GALLERY: GalleryItem[] = [
   {
-    slug: "waiting-lounge",
-    image: "/gallery/galary-1-compressed.jpg",
+    slug: "reception",
+    image: "/gallery/reception.jpg",
+    caption: "Welcome to Aesthetic Clinic — visit our reception in Rajouri Garden to book your next appointment.",
+  },
+  {
+    slug: "waiting-area",
+    image: "/gallery/waiting.jpg",
     caption: "A comfortable waiting lounge designed for calm and comfort, right before your appointment begins.",
   },
   {
-    slug: "treatment-room",
-    image: "/gallery/galary-2-compressed.jpg",
-    caption: "Aesthetic Clinic provides a modern, welcoming space for every skin, hair and wellness treatment.",
+    slug: "room-one",
+    image: "/gallery/room1.jpg",
+    caption: "A private treatment room designed for focused, one-on-one care.",
+  },
+  {
+    slug: "room-two",
+    image: "/gallery/room2.jpg",
+    caption: "A calm, private space designed for honest conversations about your skin, hair and treatment goals.",
   },
   {
     slug: "clinic-interior",
-    image: "/gallery/galary-3-compressed.jpg",
-    caption: "We offer the perfect blend of clinical precision and care — expert diagnosis to advanced treatment — for the best result.",
-  },
-  {
-    slug: "reception-desk",
-    image: "/gallery/galary-4-compressed.jpg",
-    caption: "Welcome to Aesthetic Clinic — visit our reception in Rajouri Garden to book your next appointment.",
+    image: "/gallery/galary.jpg",
+    caption: "Aesthetic Clinic provides a modern, welcoming space for every skin, hair and wellness treatment.",
   },
 ];
 
@@ -170,7 +177,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {visibleItems.map((item, index) => (
             <button
               key={item.slug}

@@ -15,10 +15,11 @@ const BADGES = [
 
 // Aligned with the real category list in sections/services/page.tsx
 const SERVICES = [
-  "Laser Hair Reduction",
   "Skin Aesthetics",
-  "Hair Restoration",
+  "Anti-Ageing",
   "Body Lab",
+  "MediFacial",
+  "Hair Restoration",
   "Not sure yet",
 ];
 
@@ -34,28 +35,52 @@ export default function Hero() {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
+    // Entrance animation for users who allow motion. The elements start
+    // hidden via CSS classes in the JSX (opacity-0 / translate / scale),
+    // NOT via this effect — that's what stops the "flash of finished
+    // content" you'd otherwise see for the moment between first paint
+    // and JS hydration.
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.fromTo(bgRef.current, { scale: 1.12 }, { scale: 1, duration: 2.2, ease: "power2.out" }, 0)
-        .fromTo(eyebrowRef.current, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.1)
-        .fromTo(headingRef.current, { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, 0.22)
-        .fromTo(subRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.4)
+      tl.fromTo(bgRef.current, { scale: 1.12 }, { scale: 1, duration: 1.6, ease: "power2.out" }, 0)
+        .fromTo(eyebrowRef.current, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.05)
+        .fromTo(headingRef.current, { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.15)
+        .fromTo(subRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.28)
         .fromTo(
           badgeRefs.current,
           { y: 14, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.6, stagger: 0.09 },
-          0.55
+          { y: 0, opacity: 1, duration: 0.5, stagger: 0.08 },
+          0.4
         )
-        .fromTo(actionsRef.current, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.6)
+        .fromTo(actionsRef.current, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, 0.45)
         .fromTo(
           formRef.current,
           { y: 24, opacity: 0, scale: 0.98 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.8 },
-          0.4
+          { y: 0, opacity: 1, scale: 1, duration: 0.65 },
+          0.3
         );
 
       return () => tl.kill();
+    });
+
+    // Reduced-motion users (or anyone whose media query flips) still need
+    // these elements to end up visible — without this branch they'd be
+    // stuck at the CSS-hidden starting state forever, since the animation
+    // above is the only thing that reveals them.
+    mm.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set(
+        [
+          bgRef.current,
+          eyebrowRef.current,
+          headingRef.current,
+          subRef.current,
+          ...badgeRefs.current,
+          actionsRef.current,
+          formRef.current,
+        ],
+        { opacity: 1, y: 0, scale: 1, clearProps: "transform" }
+      );
     });
 
     return () => mm.revert();
@@ -65,8 +90,10 @@ export default function Hero() {
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-deep-teal">
       {/* Background image — priority + fetchPriority high since this is the LCP element.
           Mobile gets lighter brightness/saturation so the stacked overlays below
-          don't compound into a muddy, "dirty" look on small screens. */}
-      <div ref={bgRef} className="absolute inset-0">
+          don't compound into a muddy, "dirty" look on small screens.
+          scale-110 here is the CSS-level starting state for the GSAP scale-in above —
+          it renders correctly on first paint instead of popping in after hydration. */}
+      <div ref={bgRef} className="absolute inset-0 scale-110 will-change-transform">
         <Image
           src="/herobg.jpg"
           alt="Aesthetic Clinic — skin and hair treatment clinic interior in Rajouri Garden, Delhi"
@@ -110,32 +137,32 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 px-6 py-28 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10 lg:px-16">
         <div>
-          <p ref={eyebrowRef} className="mb-5 text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-gold-soft">
+          <p
+            ref={eyebrowRef}
+            className="mb-5 -translate-y-[18px] text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-gold-soft opacity-0"
+          >
             Aesthetic Clinic — Rajouri Garden
           </p>
 
-        
-<h1
-  ref={headingRef}
-  className="font-display text-4xl font-semibold leading-[1.15] text-white sm:text-5xl lg:text-6xl"
->
-  Rajouri Garden&apos;s{" "}
-  <span className="bg-[length:200%_auto] bg-gradient-to-r from-gold-soft via-amber-200 to-gold-soft bg-clip-text italic text-transparent animate-text-shimmer">
-    Best
-  </span>{" "}
-  Skin &amp; Hair Clinic
-</h1>
+          <h1
+            ref={headingRef}
+            className="-translate-y-[26px] font-display text-4xl font-semibold leading-[1.15] text-white opacity-0 sm:text-5xl lg:text-6xl"
+          >
+            Rajouri Garden&apos;s{" "}
+            <span className="bg-[length:200%_auto] bg-gradient-to-r from-gold-soft via-amber-200 to-gold-soft bg-clip-text italic text-transparent animate-text-shimmer">
+              Best
+            </span>{" "}
+            Skin &amp; Hair Clinic
+          </h1>
 
-<p
-  ref={subRef}
-  className="mt-6 max-w-md font-sans text-base leading-relaxed text-white/85 sm:text-lg"
->
-  At Square Aesthetics, we don&apos;t follow trends — we treat with clinical
-  precision. Doctor-led skin, hair and body treatments, modern technology,
-  and care that puts your results first.
-</p>
-```
-
+          <p
+            ref={subRef}
+            className="mt-6 max-w-md -translate-y-5 font-sans text-base leading-relaxed text-white/85 opacity-0 sm:text-lg"
+          >
+            At Square Aesthetics, we don&apos;t follow trends — we treat with clinical
+            precision. Doctor-led skin, hair and body treatments, modern technology,
+            and care that puts your results first.
+          </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a href="#booking" className="btn-pill-solid">
@@ -150,7 +177,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div ref={actionsRef} className="mt-8 flex flex-wrap items-center gap-3">
+          <div ref={actionsRef} className="mt-8 flex flex-wrap items-center gap-3 -translate-y-4 opacity-0">
             {BADGES.map(({ icon: Icon, label }, i) => (
               <div
                 key={label}
@@ -166,7 +193,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div ref={formRef} id="booking">
+        <div ref={formRef} id="booking" className="translate-y-6 scale-[0.98] opacity-0">
           <ConsultationForm />
         </div>
       </div>
