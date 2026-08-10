@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/app/Smoothscroll";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 
 // Playfair Display — elegant serif for headings/logo type.
 const displayFont = Playfair_Display({
@@ -152,6 +153,8 @@ export default function RootLayout({
           {children}
           <Footer />
         </SmoothScroll>
+          <FloatingContactButtons />
+
       </body>
     </html>
   );

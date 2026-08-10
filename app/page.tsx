@@ -1,3 +1,4 @@
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import About from "@/sections/about/page";
 import Contact from "@/sections/contact/page";
 import FAQPage from "@/sections/faq/page";

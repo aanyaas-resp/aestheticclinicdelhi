@@ -36,6 +36,9 @@ const DEFAULT_RESULTS: ResultItem[] = [
   { slug: "result-2", image: "/results/result2.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
   { slug: "result-3", image: "/results/result3.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
   { slug: "result-4", image: "/results/result4.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-5", image: "/results/result5.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-6", image: "/results/result6.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-7", image: "/results/result7.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
 ];
 
 const DEFAULT_INSTAGRAM_URL = "https://www.instagram.com/thesquare.salon";
@@ -112,71 +115,71 @@ export default function ResultsGrid({
   }, []);
 
   return (
-      <section id="results" >
-    <main
-      ref={sectionRef}
-      className="bg-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-16 lg:py-24"
-    >
-      <div className="mx-auto max-w-7xl">
-        <div ref={headingWrapRef} className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow mb-3 justify-center sm:mb-4">Real Results</p>
-          <h1 className="font-display text-2xl font-semibold leading-snug text-chocolate-deep sm:text-4xl lg:text-5xl">
-            Our <span className="accent-italic">Results</span>
-          </h1>
-          <p className="mt-3 font-sans text-sm leading-relaxed text-chocolate-deep/70 sm:mt-4 sm:text-base">
-            A snapshot of real transformations from The Square Aesthetics &amp;
-            Wellness Clinic. For the full collection, follow along on Instagram.
-          </p>
-        </div>
-
-        <div
-          ref={gridRef}
-          className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"
-        >
-          {results.length === 0 ? (
-            <p className="col-span-full text-center text-sm text-chocolate-deep/60">
-              Results coming soon.
+    <section id="results">
+      <main
+        ref={sectionRef}
+        className="bg-ivory px-4 py-16 sm:px-6 sm:py-20 lg:px-16 lg:py-24"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div ref={headingWrapRef} className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow mb-3 justify-center sm:mb-4">Real Results</p>
+            <h1 className="font-display text-2xl font-semibold leading-snug text-chocolate-deep sm:text-4xl lg:text-5xl">
+              Our <span className="accent-italic">Results</span>
+            </h1>
+            <p className="mt-3 font-sans text-sm leading-relaxed text-chocolate-deep/70 sm:mt-4 sm:text-base">
+              A snapshot of real transformations from The Square Aesthetics &amp;
+              Wellness Clinic. For the full collection, follow along on Instagram.
             </p>
-          ) : (
-            results.map((item) => (
-              <div
-                key={item.slug}
-                className="group relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_10px_30px_-6px_rgba(94,59,21,0.20)] ring-1 ring-inset ring-chocolate-deep/10 transition-shadow duration-500 hover:shadow-[0_20px_45px_-10px_rgba(94,59,21,0.4)] sm:rounded-3xl"
-              >
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 24vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-chocolate-deep/50 via-transparent to-transparent"
-                />
-              </div>
-            ))
-          )}
-        </div>
+          </div>
 
-        <div ref={ctaRef} className="mt-10 flex justify-center sm:mt-14">
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-pill group bg-chocolate text-cream shadow-md shadow-chocolate/30 transition-transform duration-300 hover:scale-[1.04] hover:bg-chocolate-deep active:scale-[0.98]"
+          <div
+            ref={gridRef}
+            className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6"
           >
-            <InstagramIcon className="h-4 w-4" />
-            Show More on Instagram
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              strokeWidth={2}
-            />
-          </a>
+            {results.length === 0 ? (
+              <p className="col-span-full text-center text-sm text-chocolate-deep/60">
+                Results coming soon.
+              </p>
+            ) : (
+              results.map((item) => (
+                <div
+                  key={item.slug}
+                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_10px_30px_-6px_rgba(94,59,21,0.20)] ring-1 ring-inset ring-chocolate-deep/10 transition-shadow duration-500 hover:shadow-[0_20px_45px_-10px_rgba(94,59,21,0.4)] sm:rounded-3xl"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 24vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-chocolate-deep/50 via-transparent to-transparent"
+                  />
+                </div>
+              ))
+            )}
+          </div>
+
+          <div ref={ctaRef} className="mt-10 flex justify-center sm:mt-14">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill group bg-chocolate text-cream shadow-md shadow-chocolate/30 transition-transform duration-300 hover:scale-[1.04] hover:bg-chocolate-deep active:scale-[0.98]"
+            >
+              <InstagramIcon className="h-4 w-4" />
+              Show More on Instagram
+              <ArrowUpRight
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                strokeWidth={2}
+              />
+            </a>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
     </section>
   );
 }
