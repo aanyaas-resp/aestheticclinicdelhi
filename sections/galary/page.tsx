@@ -16,33 +16,26 @@ type GalleryItem = {
   caption: string;
 };
 
-// Ordered to match how a first-time visitor moves through the clinic:
-// reception first, then the waiting area, then the treatment rooms.
 const GALLERY: GalleryItem[] = [
   {
     slug: "reception",
     image: "/gallery/reception.jpg",
-    caption: "Welcome to Aesthetic Clinic — visit our reception in Rajouri Garden to book your next appointment.",
+    caption: "The Square Salon reception — visit us in Rajouri Garden to book your next appointment.",
   },
   {
     slug: "waiting-area",
     image: "/gallery/waiting.jpg",
     caption: "A comfortable waiting lounge designed for calm and comfort, right before your appointment begins.",
   },
-  // {
-  //   slug: "room-one",
-  //   image: "/gallery/room1.jpg",
-  //   caption: "A private treatment room designed for focused, one-on-one care.",
-  // },
   {
-    slug: "room-two",
-    image: "/gallery/room2.jpg",
-    caption: "A calm, private space designed for honest conversations about your skin, hair and treatment goals.",
+    slug: "treatment-room",
+    image: "/gallery/treament.jpg",
+    caption: "A private treatment room designed for focused, one-on-one care.",
   },
   {
     slug: "clinic-interior",
     image: "/gallery/galary.jpg",
-    caption: "Aesthetic Clinic provides a modern, welcoming space for every skin, hair and wellness treatment.",
+    caption: "The Square Salon provides a modern, welcoming space for every skin, hair and wellness treatment.",
   },
 ];
 
