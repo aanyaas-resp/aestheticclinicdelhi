@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { Phone, Mail, MapPin } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
 
@@ -23,11 +24,6 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-// All routes are anchors on the single homepage, since About, Services,
-// JourneySection, Gallery, RealResults, ResultsPage, Contact, and FAQPage
-// are all sections composed on the same page (app/page.tsx) — matching
-// the "id" set on each section's root element.
-// In Footer.tsx — replace the QUICK_LINKS array with this
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
@@ -52,6 +48,31 @@ const ADDRESS = "Shop No. 2, J-12/13, Block J, Rajouri Garden, Delhi, India - 11
 export default function Footer() {
   const year = new Date().getFullYear();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (!href.includes("#")) return;
+
+    const id = href.split("#")[1];
+    if (!id) return;
+
+    e.preventDefault();
+
+    if (isHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", `/#${id}`);
+    } else {
+      router.push("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  };
 
   return (
     <footer className="bg-chocolate-deep px-5 py-14 sm:px-10 sm:py-16 lg:px-16">
@@ -95,6 +116,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="font-sans text-sm text-cream/70 transition-colors duration-200 hover:text-bronze"
                   >
                     {link.label}
@@ -129,7 +151,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Book CTA — opens the same BookingModal used in the navbar */}
+          {/* Book CTA */}
           <div>
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-cream/45">
               Ready When You Are

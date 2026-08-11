@@ -15,14 +15,36 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Services />
-      <About />
+
+      <div id="services">
+        <Services />
+      </div>
+
+      <div id="about">
+        <About />
+      </div>
+
+      {/* RealResults already renders <section id="results"> internally */}
       <RealResults />
-      <JourneySection />
+
+      <div id="journey">
+        <JourneySection />
+      </div>
+
+      {/* Gallery already renders <section id="gallery"> internally */}
       <Gallery />
-      <ResultsPage instagramUrl={INSTAGRAM_URL} />
-      <Contact />
-      <FAQPage />
+
+      <div id="all-results">
+        <ResultsPage instagramUrl={INSTAGRAM_URL} />
+      </div>
+
+      <div id="contact">
+        <Contact />
+      </div>
+
+      <div id="faq">
+        <FAQPage />
+      </div>
     </main>
   );
 }

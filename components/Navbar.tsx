@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
 
@@ -11,14 +11,15 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
-  { label: "Results", href: "/results" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Results", href: "/#all-results" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const SCROLL_THRESHOLD = 48;
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,20 +31,41 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // The transparent "blend with hero" look only makes sense on the home
-  // page, which starts with a hero section behind the navbar. Every other
-  // route (legal, faq, etc.) has no hero to blend with, so it stays in
-  // the solid/glass state at all times to remain readable.
   const isHome = pathname === "/";
   const isCompact = !isHome || isScrolled || isMobileOpen;
+
+  // Handles hash links (#about, #services, etc). If already on "/", scroll
+  // smoothly instead of letting Link do a hash-only URL change that doesn't
+  // reliably scroll. If on another route, navigate to "/" first, then scroll
+  // once the page has mounted.
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (!href.includes("#")) return; // plain routes (e.g. "/") behave normally
+
+    const id = href.split("#")[1];
+    if (!id) return;
+
+    e.preventDefault();
+    setIsMobileOpen(false);
+
+    if (isHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", `/#${id}`);
+    } else {
+      router.push("/");
+      // Wait for the home page to mount before scrolling
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
         className={`mx-auto transition-all duration-500 ease-out ${
-          // lg:max-w-4xl (not 3xl) — logo + 6 nav links + CTA button need
-          // more than 768px at desktop width, or the button overflows the
-          // rounded pill instead of sitting inside it.
           isCompact ? "max-w-3xl px-3 pt-3 sm:px-4 sm:pt-4 lg:max-w-4xl" : "max-w-7xl px-4 pt-0 sm:px-6 lg:px-16"
         }`}
       >
@@ -86,6 +108,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <Link
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className={`whitespace-nowrap font-sans text-sm font-medium transition-colors duration-300 ${
                     isCompact
                       ? "text-chocolate-deep/80 hover:text-bronze"
@@ -143,7 +166,7 @@ export default function Navbar() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    onClick={() => setIsMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="block rounded-xl px-3 py-2.5 font-sans text-sm font-medium text-chocolate-deep/85 transition-colors duration-200 hover:bg-bronze/10 hover:text-bronze"
                   >
                     {link.label}

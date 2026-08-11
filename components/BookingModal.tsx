@@ -10,11 +10,11 @@ import { useSmoothScroll } from "@/app/Smoothscroll";
 const CLINIC_WHATSAPP = "918057790577"; // TODO: confirm WhatsApp-enabled number
 
 const SERVICES = [
-  "Laser Hair Reduction",
   "Skin Aesthetics",
-  "Hair Restoration",
+  "Anti-Ageing",
   "Body Lab",
-  "Not sure yet",
+  "MediFacial",
+  "Hair Restoration",
 ];
 
 type BookingModalProps = {

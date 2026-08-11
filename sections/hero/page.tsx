@@ -20,7 +20,6 @@ const SERVICES = [
   "Body Lab",
   "MediFacial",
   "Hair Restoration",
-  "Not sure yet",
 ];
 
 export default function Hero() {

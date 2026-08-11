@@ -12,18 +12,15 @@ if (typeof window !== "undefined") {
 type SmoothScrollContextValue = {
   pause: () => void;
   resume: () => void;
+  scrollTo: (target: string | HTMLElement) => void;
 };
 
 const SmoothScrollContext = createContext<SmoothScrollContextValue>({
   pause: () => {},
   resume: () => {},
+  scrollTo: () => {},
 });
 
-// Call this from anywhere that opens an overlay/modal on top of the page —
-// e.g. BookingModal — and call resume() on close. Regular CSS
-// `overflow: hidden` on <body> does NOT stop background scroll once
-// ScrollSmoother is active, since it drives scroll via transforms, not the
-// native scrollbar.
 export function useSmoothScroll() {
   return useContext(SmoothScrollContext);
 }
@@ -33,19 +30,28 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
   const [ctxValue] = useState<SmoothScrollContextValue>(() => ({
     pause: () => smootherRef.current?.paused(true),
     resume: () => smootherRef.current?.paused(false),
+    // Falls back to native smooth scroll for reduced-motion users, since
+    // ScrollSmoother.create() never runs for them (see matchMedia below).
+    scrollTo: (target) => {
+      if (smootherRef.current) {
+        smootherRef.current.scrollTo(target, true, "top top");
+      } else {
+        const el = typeof target === "string" ? document.querySelector(target) : target;
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
+    },
   }));
 
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    // Respect reduced-motion users — they get normal instant scroll, no smoothing.
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       smootherRef.current = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
-        smooth: 1.1, // higher = floatier/slower catch-up, lower = snappier. 1–1.5 is a natural range.
-        smoothTouch: 0, // keep native scroll feel on phones — avoids jank + extra battery drain on mobile
-        normalizeScroll: true, // fixes mobile address-bar-resize jump issues
+        smooth: 1.1,
+        smoothTouch: 0,
+        normalizeScroll: true,
         ignoreMobileResize: true,
       });
 
@@ -55,9 +61,6 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       };
     });
 
-    // Images (Hero, Gallery, ResultsGrid, etc.) that finish loading after
-    // mount change page height — without a refresh, ScrollSmoother/
-    // ScrollTrigger keep using stale measurements and scroll math drifts.
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("load", refresh);
 

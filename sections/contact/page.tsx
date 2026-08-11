@@ -38,8 +38,6 @@ const CLINIC_MAPS_LINK = "https://maps.app.goo.gl/gm5ACAhHxdnQjrga9";
 const GENDERS = ["Male", "Female"];
 const DEPARTMENTS = ["Laser Treatments", "Skin Treatments", "Hair Treatments", "Botox", "Filler", "PRP", "Other"];
 
-const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14006.615948808627!2d77.1188865!3d28.6401307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d035c49b138f7%3A0x19f6fb39c8a9f081!2sThe%20Square%20Salon!5e0!3m2!1sen!2sin!4v1786298766205!5m2!1sen!2sin";
 
 function directionsUrl(address: string) {
   return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(address);
@@ -234,18 +232,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div
-              ref={mapRef}
-              className="mt-6 aspect-[4/3] w-full overflow-hidden rounded-3xl border border-chocolate-deep/10 shadow-[0_8px_28px_rgba(94,59,21,0.15)]"
-            >
-              <iframe
-                src={MAP_EMBED_SRC}
-                title={`${CLINIC_NAME} location map`}
-                className="h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-              />
-            </div>
+            
           </div>
 
           <div className="lg:col-span-3">

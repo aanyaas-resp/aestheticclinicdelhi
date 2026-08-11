@@ -29,11 +29,11 @@ const GALLERY: GalleryItem[] = [
     image: "/gallery/waiting.jpg",
     caption: "A comfortable waiting lounge designed for calm and comfort, right before your appointment begins.",
   },
-  {
-    slug: "room-one",
-    image: "/gallery/room1.jpg",
-    caption: "A private treatment room designed for focused, one-on-one care.",
-  },
+  // {
+  //   slug: "room-one",
+  //   image: "/gallery/room1.jpg",
+  //   caption: "A private treatment room designed for focused, one-on-one care.",
+  // },
   {
     slug: "room-two",
     image: "/gallery/room2.jpg",
@@ -177,7 +177,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {visibleItems.map((item, index) => (
             <button
               key={item.slug}
