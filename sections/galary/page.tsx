@@ -34,7 +34,7 @@ const GALLERY: GalleryItem[] = [
   },
   {
     slug: "clinic-interior",
-    image: "/gallery/galary.jpg",
+    image: "/gallery/galary2.jpg",
     caption: "The Square Salon provides a modern, welcoming space for every skin, hair and wellness treatment.",
   },
 ];

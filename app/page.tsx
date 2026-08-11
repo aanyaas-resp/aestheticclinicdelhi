@@ -7,6 +7,7 @@ import Hero from "@/sections/hero/page";
 import JourneySection from "@/sections/journey/page";
 import RealResults from "@/sections/result/page";
 import ResultsPage from "@/sections/results/page";
+import Reviews from "@/sections/review/page";
 import Services from "@/sections/services/page";
 
 const INSTAGRAM_URL = "https://www.instagram.com/thesquare.salon/";
@@ -37,6 +38,7 @@ export default function Home() {
       <div id="all-results">
         <ResultsPage instagramUrl={INSTAGRAM_URL} />
       </div>
+      <Reviews />
 
       <div id="contact">
         <Contact />

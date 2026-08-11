@@ -35,13 +35,25 @@ const CATEGORIES: Category[] = [
     subheading:
       "Dermatology-led rejuvenation for texture, tone and skin health — precision care suited to Indian skin.",
     items: [
+      // TODO: source link was a Google Photos share page, not a direct image —
+      // download the actual photo and save as /services2/dermapen4-compressed.jpg
       { slug: "dermapen-4", image: "/services2/dermapen4-compressed.jpg", label: "DERMAPEN 4", title: "Dermapen 4", tagline: "MICRONEEDLING", description: "Advanced medical microneedling that stimulates collagen production to refine texture, scarring and overall skin quality." },
       { slug: "dermaplaning", image: "/services2/dermaplaning-compressed.jpg", label: "DERMAPLANING", title: "Dermaplaning", tagline: "INSTANT SMOOTHNESS", description: "A gentle exfoliation treatment that sweeps away dead skin and peach fuzz for an immediately smoother, brighter surface." },
-      { slug: "tag-removal", image: "/services2/tanremoval-compressed.jpg", label: "TAG REMOVAL", title: "Tag Removal", tagline: "PRECISION CARE", description: "Safe, precise removal of skin tags using medical-grade techniques, performed under expert supervision." },
-      { slug: "wart-removal", image: "/services2/wartremoval-compressed.jpg", label: "WART REMOVAL", title: "Wart Removal", tagline: "PRECISION CARE", description: "Clinically guided wart removal designed to clear growths effectively with minimal discomfort and downtime." },
-      { slug: "skin-whitening-pigmentation", image: "/services2/skinwhiteningandpigmentation-compressed.jpg", label: "SKIN WHITENING & PIGMENTATION", title: "Skin Whitening & Pigmentation", tagline: "EVEN, RADIANT TONE", description: "Medical-grade brightening combined with precision laser and peel therapy to fade pigmentation and even out skin tone." },
+      // Merged from separate Tag Removal / Wart Removal cards
+      { slug: "tag-wart-removal", image: "/services2/tagremoval-compressed.jpg", label: "TAG & WART REMOVAL", title: "Tag & Wart Removal", tagline: "PRECISION CARE", description: "Safe, precise removal of skin tags and warts using medical-grade techniques, performed under expert supervision with minimal downtime." },
+      // TODO: replace with real "before/after" set — the old Dermapen 4 and
+      // HIFU cards were sharing the same photo pair
+      { slug: "microblading", image: "/services2/microblading-compressed.jpg", label: "MICROBLADING", title: "Microblading", tagline: "DEFINED BROWS", description: "Semi-permanent, hair-stroke brow technique that fills sparse areas and defines shape for natural-looking, low-maintenance brows." },
+      { slug: "acne-acne-scar", image: "/services2/acne-compressed.jpg", label: "ACNE & ACNE SCAR", title: "Acne & Acne Scar", tagline: "CLEARER, SMOOTHER SKIN", description: "Targeted clinical protocols that calm active breakouts and resurface acne scarring for a clearer, more even complexion." },
+      { slug: "whitening-pigmentation", image: "/services2/skinwhiteningandpigmentation-compressed.jpg", label: "WHITENING & PIGMENTATION", title: "Whitening & Pigmentation", tagline: "EVEN, RADIANT TONE", description: "Medical-grade brightening combined with precision laser and peel therapy to fade pigmentation and even out skin tone." },
+      { slug: "korean-glass-skin", image: "/services2/koreanglass-compressed.jpg", label: "KOREAN GLASS SKIN", title: "Korean Glass Skin", tagline: "DEWY, LUMINOUS FINISH", description: "A layered glow-boosting protocol that hydrates, refines pores and evens tone for that signature translucent, glass-like skin." },
+      { slug: "open-pores", image: "/services2/open-poars-compressed.jpg", label: "OPEN PORES", title: "Open Pores", tagline: "REFINED TEXTURE", description: "Deep-cleansing and pore-tightening treatments that visibly minimise open pores for a smoother, more refined skin texture." },
+      // TODO: source link was a Pinterest pin, not a direct image —
+      // download the actual photo and save as /services2/undereye-compressed.jpg
       { slug: "under-eye-treatment", image: "/services2/undereye-compressed.jpg", label: "UNDER EYE TREATMENT", title: "Under-Eye Treatment", tagline: "BRIGHT & REFRESHED", description: "Targeted therapy for dark circles, puffiness and fine lines to refresh and brighten the delicate under-eye area." },
       { slug: "salmon-dna", image: "/services2/salmon-compressed.jpg", label: "SALMON DNA", title: "Salmon DNA", tagline: "SKIN REGENERATION", description: "PDRN-based bio-regeneration therapy that boosts hydration, elasticity and repair for firmer, revitalised skin." },
+      // TODO: source link was a Google Photos share page, not a direct image —
+      // download the actual photo and save as /services2/hifu-compressed.jpg
       { slug: "hifu", image: "/services2/hifu-compressed.jpg", label: "HIFU", title: "HIFU", tagline: "NON-SURGICAL LIFT", description: "High-intensity focused ultrasound that lifts and firms by triggering deep collagen renewal, with no downtime." },
     ],
   },
@@ -56,6 +68,12 @@ const CATEGORIES: Category[] = [
       { slug: "stunox", image: "/services2/stunox-compressed.jpg", label: "STUNOX", title: "Stunox", tagline: "COLLAGEN RENEWAL", description: "An advanced anti-aging treatment that stimulates collagen renewal to firm the skin and soften visible signs of aging." },
       { slug: "skin-booster", image: "/services2/skinbooster-compressed.jpg", label: "SKIN BOOSTER", title: "Skin Booster", tagline: "DEEP HYDRATION", description: "Injectable hyaluronic acid boosters that hydrate from within for plump, smooth and naturally glowing skin." },
       { slug: "profhilo", image: "/services2/profhilo-compressed.jpg", label: "PROFHILO", title: "Profhilo", tagline: "BIO-REMODELLING", description: "A next-generation bio-remodelling injectable that improves skin laxity, hydration and overall firmness." },
+      // TODO: source link was a Pinterest pin, not a direct image —
+      // download the actual photo and save as /services2/fillers-compressed.jpg
+      { slug: "fillers", image: "/services2/filler-compressed.jpg", label: "FILLERS", title: "Fillers", tagline: "RESTORE VOLUME", description: "Dermal fillers that restore lost volume and soften lines, sculpting natural contours in the cheeks, lips and jawline." },
+      // TODO: source link was a Pinterest pin, not a direct image —
+      // download the actual photo and save as /services2/threads-compressed.jpg
+      { slug: "threads", image: "/services2/threads-compressed.jpg", label: "THREADS", title: "Threads", tagline: "NON-SURGICAL LIFT", description: "Dissolvable thread-lift technique that lifts and tightens sagging skin while stimulating fresh collagen production." },
     ],
   },
   {
@@ -67,9 +85,14 @@ const CATEGORIES: Category[] = [
       "Non-surgical contouring and tone-evening treatments for the body, built for results that last.",
     items: [
       { slug: "rf", image: "/services2/rf-compressed.jpg", label: "RF", title: "RF", tagline: "SKIN TIGHTENING", description: "Radiofrequency energy that firms skin and softens stubborn fat pockets by triggering fresh collagen production." },
+      { slug: "lipolysis", image: "/services2/lypolysis-compressed.jpg", label: "LIPOLYSIS", title: "Lipolysis", tagline: "FAT REDUCTION", description: "Non-surgical fat-dissolving treatment that targets stubborn pockets for a more contoured body shape." },
       { slug: "body-tan-removal", image: "/services2/bodytan-compressed.jpg", label: "BODY TAN REMOVAL", title: "Body Tan Removal", tagline: "EVEN TONE", description: "Brightening treatments that lift tan lines and uneven tone, restoring a more consistent, radiant skin tone across the body." },
       { slug: "pigmentation-whitening", image: "/services2/pigmentation-compressed.jpg", label: "PIGMENTATION & WHITENING", title: "Pigmentation & Whitening", tagline: "EVEN TONE", description: "Targeted brightening treatments for the body that fade pigmentation and uneven tone for a more radiant finish." },
       { slug: "body-polishing", image: "/services2/bodypolishing-compressed.jpg", label: "BODY POLISHING", title: "Body Polishing", tagline: "SMOOTH & GLOW", description: "Full-body exfoliation and moisturising therapy that buffs away dullness for instantly softer, glowing skin." },
+      { slug: "diamond-polishing", image: "/services2/diamond-compressed.jpg", label: "DIAMOND POLISHING", title: "Diamond Polishing", tagline: "RESURFACE & GLOW", description: "Diamond-tip microdermabrasion that buffs away dull, dead skin for an instantly smoother, glowing finish." },
+      { slug: "nutrition-diet", image: "/services2/nutritions-compressed.jpg", label: "NUTRITION & DIET", title: "Nutrition & Diet", tagline: "PERSONALISED PLANS", description: "Doctor-guided nutrition and diet planning that supports skin, hair and body goals from the inside out." },
+      { slug: "iv-drip", image: "/services2/ivdrips-compressed.jpg", label: "IV DRIP", title: "IV Drip", tagline: "REVITALISE & REPLENISH", description: "Vitamin and nutrient IV therapy that replenishes the body, boosting energy, immunity and skin radiance." },
+      { slug: "medical-weight-loss", image: "/services2/medicalweightloss-compressed.jpg", label: "MEDICAL WEIGHT LOSS", title: "Medical Weight Loss", tagline: "DOCTOR-LED PROGRAMS", description: "Physician-supervised weight-loss programs combining clinical assessment, nutrition and treatment for sustainable results." },
     ],
   },
   {
@@ -82,7 +105,9 @@ const CATEGORIES: Category[] = [
     items: [
       { slug: "hydrafacial", image: "/services2/hydrafacial-compressed.jpg", label: "HYDRAFACIAL", title: "HydraFacial", tagline: "DEEP CLEANSE", description: "A three-step medical-grade facial that clears out impurities and locks in hydration for instantly brighter skin." },
       { slug: "thermal-sculpting-facial", image: "/services2/thermal-compressed.jpg", label: "THERMAL SCULPTING FACIAL", title: "Thermal Sculpting Facial", tagline: "CONTOUR & LIFT", description: "Heat-based contouring therapy that firms facial contours and stimulates collagen for a lifted, sculpted look." },
-      { slug: "fire-ice", image: "/services2/fireandice-compressed.jpg", label: "FIRE & ICE", title: "Fire & Ice", tagline: "RESURFACE & CALM", description: "A dual-action facial that resurfaces with a warming exfoliant, then calms and cools for smooth, refreshed skin." },
+      // TODO: source link was a Google Photos share page, not a direct image —
+      // download the actual photo and save as /services2/fireandice-compressed.jpg
+      { slug: "clinical-fire-ice", image: "/services2/fireandice-compressed.jpg", label: "CLINICAL FIRE & ICE", title: "Clinical Fire & Ice", tagline: "RESURFACE & CALM", description: "A dual-action clinical facial that resurfaces with a warming exfoliant, then calms and cools for smooth, refreshed skin." },
       { slug: "obagi", image: "/services2/obagi-compressed.jpg", label: "OBAGI", title: "Obagi", tagline: "MEDICAL SKINCARE", description: "Clinically formulated Obagi protocols that correct tone, texture and signs of aging through guided medical-grade skincare." },
     ],
   },
@@ -94,8 +119,12 @@ const CATEGORIES: Category[] = [
     subheading:
       "Advanced scalp therapies built to reactivate follicles and support thicker, healthier regrowth.",
     items: [
-      { slug: "nano-bull-hair-wash", image: "/services2/nanobullhair-compressed.jpg", label: "NANO BULL HAIR WASH", title: "Nano Bull Hair Wash", tagline: "SCALP DETOX", description: "A specialised nano-formula scalp wash that deep-cleanses buildup and preps the scalp for better treatment absorption." },
+      { slug: "nano-bubble-hair-wash", image: "/services2/nanobullhair-compressed.jpg", label: "NANO BUBBLE HAIR WASH", title: "Nano Bubble Hair Wash", tagline: "SCALP DETOX", description: "A specialised nano-bubble scalp wash that deep-cleanses buildup and preps the scalp for better treatment absorption." },
       { slug: "exosomes", image: "/services2/exosomes-compressed.jpg", label: "EXOSOMES", title: "Exosomes", tagline: "CELLULAR REGROWTH", description: "Advanced exosome therapy that signals dormant follicles to reactivate, supporting thicker, healthier regrowth." },
+      { slug: "prp-therapy", image: "/services2/prptheropy-compressed.jpg", label: "PRP THERAPY", title: "PRP Therapy", tagline: "NATURAL REGROWTH", description: "Platelet-rich plasma therapy that harnesses your own growth factors to stimulate natural, healthier hair regrowth." },
+      { slug: "hairfall-treatment", image: "/services2/hairfalltreatment-compressed.jpg", label: "HAIRFALL TREATMENT", title: "Hairfall Treatment", tagline: "REDUCE SHEDDING", description: "A targeted protocol that addresses the root causes of hairfall to reduce shedding and support fuller-looking hair." },
+      { slug: "dandruff-control", image: "/services2/dandruff-compressed.jpg", label: "DANDRUFF CONTROL", title: "Dandruff Control", tagline: "CALM, CLEAR SCALP", description: "Medical-grade scalp therapy that targets flaking and irritation for a calmer, healthier scalp." },
+      { slug: "hair-strengthening", image: "/services2/strengthening-compressed.jpg", label: "STRENGTHENING", title: "Hair Strengthening", tagline: "FORTIFY FROM ROOT", description: "Nutrient-infused strengthening therapy that fortifies hair from the root, reducing breakage and improving density." },
     ],
   },
 ];
@@ -336,32 +365,36 @@ export default function Services() {
           <p className="mt-4 text-base leading-relaxed text-chocolate-deep/70">{current.subheading}</p>
         </div>
 
-        <div
-          role="tablist"
-          aria-label="Treatment categories"
-          className="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
-        >
-          {CATEGORIES.map((c) => {
-            const isActive = c.id === activeCategory;
-            return (
-              <button
-                key={c.id}
-                type="button"
-                role="tab"
-                id={`tab-${c.id}`}
-                aria-selected={isActive}
-                aria-controls={`panel-${c.id}`}
-                onClick={() => setActiveCategory(c.id)}
-                className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors duration-200 sm:text-sm ${
-                  isActive
-                    ? "border-chocolate bg-chocolate text-cream shadow-md shadow-chocolate/25"
-                    : "border-chocolate-deep/20 bg-transparent text-chocolate-deep/70 hover:border-bronze/50 hover:text-chocolate-deep"
-                }`}
-              >
-                {c.tabLabel}
-              </button>
-            );
-          })}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div
+            role="tablist"
+            aria-label="Treatment categories"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
+          >
+            {CATEGORIES.map((c) => {
+              const isActive = c.id === activeCategory;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  role="tab"
+                  id={`tab-${c.id}`}
+                  aria-selected={isActive}
+                  aria-controls={`panel-${c.id}`}
+                  onClick={() => setActiveCategory(c.id)}
+                  className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors duration-200 sm:text-sm ${
+                    isActive
+                      ? "border-chocolate bg-chocolate text-cream shadow-md shadow-chocolate/25"
+                      : "border-chocolate-deep/20 bg-transparent text-chocolate-deep/70 hover:border-bronze/50 hover:text-chocolate-deep"
+                  }`}
+                >
+                  {c.tabLabel}
+                </button>
+              );
+            })}
+          </div>
+
+          
         </div>
 
         <div

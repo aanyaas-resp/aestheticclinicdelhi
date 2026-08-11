@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { MapPin, ShieldCheck, Sparkles, Users, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, Sparkles, Users, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BookingModal from "@/components/BookingModal";
@@ -15,7 +15,7 @@ if (typeof window !== "undefined") {
 const HIGHLIGHTS = [
   { icon: ShieldCheck, text: "Years of clinical experience in skin & hair care" },
   { icon: Sparkles, text: "Trained in advanced aesthetic and dermatology techniques" },
-  { icon: Users, text: "Personally overseeing every patient's treatment plan" },
+  { icon: Users, text: "700+ happy patients — trusted across West Delhi" },
 ];
 
 export default function Founder() {
@@ -108,19 +108,19 @@ export default function Founder() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>
 
+            {/* Location pin removed. Name shown without surname, styled as
+                a highlighted/emphasized name, with a "Founder" tag. */}
             <address
               ref={badgeRef}
               className="not-italic absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl bg-cream-text px-4 py-3.5 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:-bottom-7 sm:-right-7 sm:left-auto sm:px-5 sm:py-4"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-deep-teal/8 sm:h-11 sm:w-11">
-                <MapPin className="h-4.5 w-4.5 text-gold sm:h-5 sm:w-5" strokeWidth={1.75} />
-              </span>
               <div className="leading-tight">
-                {/* TODO: replace with founder's name / title */}
-                <p className="font-display text-base font-semibold text-teal-darker sm:text-lg">
-                  Dr. Pooja Sahni
+                <p className="font-display text-lg font-bold text-white sm:text-xl">
+                   Pooja Sawhney
                 </p>
-                <p className="font-sans text-xs text-teal-darker/60">Founder & Lead Physician</p>
+                <p className="font-sans text-xs font-semibold uppercase tracking-wide text-teal-darker/60">
+                  Founder
+                </p>
               </div>
             </address>
           </div>
@@ -150,25 +150,7 @@ export default function Founder() {
               puts your results first.
             </p>
 
-            <ul className="mt-9 space-y-4">
-              {HIGHLIGHTS.map(({ icon: Icon, text }, i) => (
-                <li
-                  key={text}
-                  ref={(el) => {
-                    highlightRefs.current[i] = el;
-                  }}
-                  className="group flex items-center gap-3.5"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/8 ring-1 ring-inset ring-gold-soft/30 transition-colors duration-300 group-hover:bg-gold-soft">
-                    <Icon
-                      className="h-4 w-4 text-gold-soft transition-colors duration-300 group-hover:text-teal-darker"
-                      strokeWidth={1.75}
-                    />
-                  </span>
-                  <span className="font-sans text-sm text-cream-text/85 sm:text-base">{text}</span>
-                </li>
-              ))}
-            </ul>
+        
 
             <div className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
               <button
@@ -183,8 +165,14 @@ export default function Founder() {
                   strokeWidth={2}
                 />
               </button>
-              
-            
+
+              {/* TODO: point at the real reviews section/page once it exists */}
+              <a
+                href="#reviews"
+                className="btn-pill group w-full justify-center border border-gold-soft/50 bg-transparent text-gold-soft transition-colors duration-300 hover:bg-gold-soft/10 sm:w-auto"
+              >
+                Read Reviews
+              </a>
             </div>
           </div>
         </div>
