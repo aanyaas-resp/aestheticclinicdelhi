@@ -30,8 +30,7 @@ const accentFont = Cinzel({
   display: "swap",
 });
 
-// TODO: confirm this is the final live domain before deploy
-const SITE_URL = "https://squareastheticclinic.vercel.app/";
+const SITE_URL = "https://www.thesquareaesthetics.com/";
 
 export const viewport: Viewport = {
   width: "device-width",
