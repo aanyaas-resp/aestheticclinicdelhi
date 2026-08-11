@@ -25,7 +25,6 @@ type Category = {
   subheading: string;
   items: Treatment[];
 };
-
 const CATEGORIES: Category[] = [
   {
     id: "skin",
@@ -55,6 +54,89 @@ const CATEGORIES: Category[] = [
       // TODO: source link was a Google Photos share page, not a direct image —
       // download the actual photo and save as /services2/hifu-compressed.jpg
       { slug: "hifu", image: "/services2/hifu-compressed.jpg", label: "HIFU", title: "HIFU", tagline: "NON-SURGICAL LIFT", description: "High-intensity focused ultrasound that lifts and firms by triggering deep collagen renewal, with no downtime." },
+    ],
+  },
+  {
+    id: "lhr",
+    tabLabel: "Laser Hair Reduction",
+    eyebrow: "Our Treatments",
+    heading: "Laser Hair Reduction Treatments",
+    
+    subheading:
+      "Advanced laser hair reduction treatments for smoother-looking skin across every treatment area.",
+    items: [
+      {
+        slug: "upper-lips",
+        image: "/services2/upperlips-compressed.jpg",
+        label: "UPPER LIPS",
+        title: "Upper Lips LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "Targeted laser hair reduction for the upper lip, designed to reduce unwanted hair and leave the skin feeling smoother.",
+      },
+      {
+        slug: "chin-sidelocks",
+        image: "/services2/chin-compressed.jpg",
+        label: "CHIN / SIDELOCKS",
+        title: "Chin / Sidelocks LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "Targeted laser hair reduction for the chin and sidelocks area, helping reduce unwanted facial hair with minimal discomfort.",
+      },
+      {
+        slug: "full-face",
+        image: "/services2/fullface-compressed.jpg",
+        label: "FULL FACE",
+        title: "Face LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "Comprehensive facial laser hair reduction designed to reduce unwanted hair across the face and maintain a smoother appearance.",
+      },
+      {
+        slug: "underarms",
+        image: "/services2/underarms-compressed.jpg",
+        label: "UNDERARMS",
+        title: "Underarms LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "Quick and targeted laser hair reduction for the underarms, helping reduce unwanted hair over a course of treatments.",
+      },
+      {
+        slug: "full-arms",
+        image: "/services2/fullarms-compressed.jpg",
+        label: "FULL ARMS",
+        title: "Full Arms LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "Full-arm laser hair reduction tailored to the treatment area, helping achieve smoother-looking skin with progressive results.",
+      },
+      {
+        slug: "full-legs",
+        image: "/services2/fulllegs-compressed.jpg",
+        label: "FULL LEGS",
+        title: "Full Legs LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "Laser hair reduction across the full legs to progressively reduce unwanted hair and maintain smoother-looking skin.",
+      },
+      {
+        slug: "half-body",
+        image: "/services2/halfbody-compressed.jpg",
+        label: "HALF BODY",
+        title: "Half Body LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "A convenient combination treatment covering selected body areas for comprehensive and efficient laser hair reduction.",
+      },
+      {
+        slug: "full-body",
+        image: "/services2/fullbody-compressed.jpg",
+        label: "FULL BODY",
+        title: "Full Body LHR Treatment",
+        tagline: "SMOOTH SKIN",
+        description:
+          "A comprehensive full-body laser hair reduction treatment designed to progressively reduce unwanted hair across multiple areas.",
+      },
     ],
   },
   {
