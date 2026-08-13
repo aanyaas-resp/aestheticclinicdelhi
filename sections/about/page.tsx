@@ -15,7 +15,7 @@ if (typeof window !== "undefined") {
 const HIGHLIGHTS = [
   { icon: ShieldCheck, text: "Years of clinical experience in skin & hair care" },
   { icon: Sparkles, text: "Trained in advanced aesthetic and dermatology techniques" },
-  { icon: Users, text: "700+ happy patients — trusted across West Delhi" },
+  { icon: Users, text: "700+ happy clients — trusted across West Delhi" },
 ];
 
 export default function Founder() {
@@ -105,29 +105,30 @@ export default function Founder() {
                 className="object-cover"
                 loading="lazy"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-            </div>
+              {/* Stronger scrim so the name stays legible against any photo */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-            {/* Location pin removed. Name shown without surname, styled as
-                a highlighted/emphasized name, with a "Founder" tag. */}
-            <address
-              ref={badgeRef}
-              className="not-italic absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl bg-cream-text px-4 py-3.5 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:-bottom-7 sm:-right-7 sm:left-auto sm:px-5 sm:py-4"
-            >
-              <div className="leading-tight">
-                <p className="font-display text-lg font-bold text-white sm:text-xl">
-                   Pooja Sawhney
+              {/* Name sits inside the image, bottom-left, on top of the scrim */}
+              <address
+                ref={badgeRef}
+                className="not-italic absolute inset-x-4 bottom-4 z-10 sm:inset-x-5 sm:bottom-5"
+              >
+                <p className="font-display text-xl font-bold text-white drop-shadow-sm sm:text-2xl">
+                  Pooja Sawhney
                 </p>
-                <p className="font-sans text-xs font-semibold uppercase tracking-wide text-teal-darker/60">
+                <p className="font-sans text-xs font-semibold uppercase tracking-wide text-gold-soft">
                   Founder
                 </p>
-              </div>
-            </address>
+              </address>
+            </div>
           </div>
 
           {/* Copy column */}
           <div ref={copyColRef} className="mt-4 lg:mt-0">
-            <p className="eyebrow mb-4 text-gold-soft [&::before]:bg-gold-soft/50">Meet the Founder</p>
+            {/* Founder name as the eyebrow — bolder + wider tracking so it reads as the standout label */}
+            <p className="eyebrow mb-4 text-base font-bold uppercase tracking-[0.2em] text-gold-soft [&::before]:bg-gold-soft/50">
+              Pooja Sawhney
+            </p>
             <h2
               id="founder-heading"
               className="font-display text-[2rem] font-semibold leading-tight text-cream-text sm:text-4xl lg:text-5xl"
@@ -149,8 +150,6 @@ export default function Founder() {
               philosophy — no trends, no shortcuts, just expert care that
               puts your results first.
             </p>
-
-        
 
             <div className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
               <button

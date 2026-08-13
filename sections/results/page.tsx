@@ -32,18 +32,18 @@ type ResultItem = { slug: string; image: string; alt: string };
 // Default gallery — swap the `alt` text per image once you know what each
 // treatment/result actually is (helps SEO + accessibility, not just filler).
 const DEFAULT_RESULTS: ResultItem[] = [
-  { slug: "result-1", image: "/results/result1.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-2", image: "/results/result2.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-3", image: "/results/result3.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-4", image: "/results/result4.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-5", image: "/results/result5.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
   { slug: "result-6", image: "/results/result6.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-7", image: "/results/result7.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-3", image: "/results/result3.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
   { slug: "result-8", image: "/results/result8.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-9", image: "/results/result9.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-1", image: "/results/result1.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
   { slug: "result-10", image: "/results/result10.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
-  { slug: "result-11", image: "/results/result11.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-5", image: "/results/result5.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-7", image: "/results/result7.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-2", image: "/results/result2.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-9", image: "/results/result9.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-4", image: "/results/result4.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
   { slug: "result-12", image: "/results/result12.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
+  { slug: "result-11", image: "/results/result11.jpg", alt: "Before and after transformation at The Square Aesthetics & Wellness Clinic" },
 ];
 
 const DEFAULT_INSTAGRAM_URL = "https://www.instagram.com/thesquare.salon";

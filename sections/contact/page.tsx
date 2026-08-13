@@ -20,8 +20,7 @@ if (typeof window !== "undefined") {
 }
 
 const CLINIC_NAME = "The Square Aesthetics & Wellness Clinic";
-const CLINIC_WHATSAPP = "918057790577"; // 080577 90577, WhatsApp-enabled
-const CLINIC_EMAIL = "info@thesquaresalon.in"; // TODO: confirm this is the live inbox — derived from thesquaresalon.in
+const CLINIC_WHATSAPP = "918057790577"; 
 
 const CLINIC_PHONES = [{ display: "080577 90577", tel: "8057790577" }];
 
@@ -32,7 +31,6 @@ const CLINIC_ADDRESSES = [
   },
 ];
 
-// Official short link for the clinic's Google Business Profile.
 const CLINIC_MAPS_LINK = "https://maps.app.goo.gl/gm5ACAhHxdnQjrga9";
 
 const GENDERS = ["Male", "Female"];
@@ -149,21 +147,7 @@ export default function Contact() {
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10">
           <div className="lg:col-span-2">
             <div className="space-y-4">
-              <a
-                ref={(el) => {
-                  cardRefs.current[0] = el;
-                }}
-                href={`mailto:${CLINIC_EMAIL}`}
-                className="group flex items-start gap-4 rounded-2xl border border-chocolate-deep/10 bg-cream/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-bronze/60 hover:shadow-[0_10px_28px_rgba(94,59,21,0.12)]"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-chocolate-deep/5 transition-colors duration-300 group-hover:bg-bronze">
-                  <Mail className="h-4 w-4 text-bronze transition-colors duration-300 group-hover:text-cream" strokeWidth={1.75} />
-                </span>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-chocolate-deep/50">Email</p>
-                  <p className="mt-1 text-sm font-medium text-chocolate-deep sm:text-base">{CLINIC_EMAIL}</p>
-                </div>
-              </a>
+             
 
               <div
                 ref={(el) => {

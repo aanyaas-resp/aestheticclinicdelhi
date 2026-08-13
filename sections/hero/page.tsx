@@ -9,7 +9,7 @@ const CLINIC_WHATSAPP = "918057790577"; // TODO: confirm WhatsApp-enabled number
 
 const BADGES = [
   { icon: Star, label: "4.9/5 Google Reviews" },
-  { icon: ShieldCheck, label: "70+ Happy Clients" },
+  { icon: ShieldCheck, label: "700+ Happy Clients" },
   { icon: Award, label: "Trusted in Rajouri Garden" },
 ];
 
