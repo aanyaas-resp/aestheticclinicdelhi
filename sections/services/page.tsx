@@ -36,24 +36,24 @@ const CATEGORIES: Category[] = [
     items: [
       // TODO: source link was a Google Photos share page, not a direct image —
       // download the actual photo and save as /services2/dermapen4-compressed.jpg
-      { slug: "dermapen-4", image: "/services2/dermapen4-compressed.jpg", label: "DERMAPEN 4", title: "Dermapen 4", tagline: "MICRONEEDLING", description: "Advanced medical microneedling that stimulates collagen production to refine texture, scarring and overall skin quality." },
-      { slug: "dermaplaning", image: "/services2/dermaplaning-compressed.jpg", label: "DERMAPLANING", title: "Dermaplaning", tagline: "INSTANT SMOOTHNESS", description: "A gentle exfoliation treatment that sweeps away dead skin and peach fuzz for an immediately smoother, brighter surface." },
+      { slug: "dermapen-4", image: "/services/dermapen4-compressed.jpg", label: "DERMAPEN 4", title: "Dermapen 4", tagline: "MICRONEEDLING", description: "Advanced medical microneedling that stimulates collagen production to refine texture, scarring and overall skin quality." },
+      { slug: "dermaplaning", image: "/services/dermaplaning-compressed.jpg", label: "DERMAPLANING", title: "Dermaplaning", tagline: "INSTANT SMOOTHNESS", description: "A gentle exfoliation treatment that sweeps away dead skin and peach fuzz for an immediately smoother, brighter surface." },
       // Merged from separate Tag Removal / Wart Removal cards
-      { slug: "tag-wart-removal", image: "/services2/tagremoval-compressed.jpg", label: "TAG & WART REMOVAL", title: "Tag & Wart Removal", tagline: "PRECISION CARE", description: "Safe, precise removal of skin tags and warts using medical-grade techniques, performed under expert supervision with minimal downtime." },
+      { slug: "tag-wart-removal", image: "/services/tagwartremoval-compressed.jpg", label: "TAG & WART REMOVAL", title: "Tag & Wart Removal", tagline: "PRECISION CARE", description: "Safe, precise removal of skin tags and warts using medical-grade techniques, performed under expert supervision with minimal downtime." },
       // TODO: replace with real "before/after" set — the old Dermapen 4 and
       // HIFU cards were sharing the same photo pair
-      { slug: "microblading", image: "/services2/microblading2-compressed.jpg", label: "MICROBLADING", title: "Microblading", tagline: "DEFINED BROWS", description: "Semi-permanent, hair-stroke brow technique that fills sparse areas and defines shape for natural-looking, low-maintenance brows." },
-      { slug: "acne-acne-scar", image: "/services2/acne-compressed.jpg", label: "ACNE & ACNE SCAR", title: "Acne & Acne Scar", tagline: "CLEARER, SMOOTHER SKIN", description: "Targeted clinical protocols that calm active breakouts and resurface acne scarring for a clearer, more even complexion." },
-      { slug: "whitening-pigmentation", image: "/services2/skinwhiteningandpigmentation-compressed.jpg", label: "WHITENING & PIGMENTATION", title: "Whitening & Pigmentation", tagline: "EVEN, RADIANT TONE", description: "Medical-grade brightening combined with precision laser and peel therapy to fade pigmentation and even out skin tone." },
-      { slug: "korean-glass-skin", image: "/services2/koreanglass-compressed.jpg", label: "KOREAN GLASS SKIN", title: "Korean Glass Skin", tagline: "DEWY, LUMINOUS FINISH", description: "A layered glow-boosting protocol that hydrates, refines pores and evens tone for that signature translucent, glass-like skin." },
-      { slug: "open-pores", image: "/services2/open-poars-compressed.jpg", label: "OPEN PORES", title: "Open Pores", tagline: "REFINED TEXTURE", description: "Deep-cleansing and pore-tightening treatments that visibly minimise open pores for a smoother, more refined skin texture." },
+      { slug: "microblading", image: "/services/microblading-compressed.jpg", label: "MICROBLADING", title: "Microblading", tagline: "DEFINED BROWS", description: "Semi-permanent, hair-stroke brow technique that fills sparse areas and defines shape for natural-looking, low-maintenance brows." },
+      { slug: "acne-acne-scar", image: "/services/acne-compressed.jpg", label: "ACNE & ACNE SCAR", title: "Acne & Acne Scar", tagline: "CLEARER, SMOOTHER SKIN", description: "Targeted clinical protocols that calm active breakouts and resurface acne scarring for a clearer, more even complexion." },
+      { slug: "whitening-pigmentation", image: "/services/skinpigm-compressed.jpg", label: "WHITENING & PIGMENTATION", title: "Whitening & Pigmentation", tagline: "EVEN, RADIANT TONE", description: "Medical-grade brightening combined with precision laser and peel therapy to fade pigmentation and even out skin tone." },
+      { slug: "korean-glass-skin", image: "/services/koreanglass-compressed.jpg", label: "KOREAN GLASS SKIN", title: "Korean Glass Skin", tagline: "DEWY, LUMINOUS FINISH", description: "A layered glow-boosting protocol that hydrates, refines pores and evens tone for that signature translucent, glass-like skin." },
+      { slug: "open-pores", image: "/services/openpoars-compressed.jpg", label: "OPEN PORES", title: "Open Pores", tagline: "REFINED TEXTURE", description: "Deep-cleansing and pore-tightening treatments that visibly minimise open pores for a smoother, more refined skin texture." },
       // TODO: source link was a Pinterest pin, not a direct image —
       // download the actual photo and save as /services2/undereye-compressed.jpg
-      { slug: "under-eye-treatment", image: "/services2/undereye-compressed.jpg", label: "UNDER EYE TREATMENT", title: "Under-Eye Treatment", tagline: "BRIGHT & REFRESHED", description: "Targeted therapy for dark circles, puffiness and fine lines to refresh and brighten the delicate under-eye area." },
-      { slug: "salmon-dna", image: "/services2/salmon-compressed.jpg", label: "SALMON DNA", title: "Salmon DNA", tagline: "SKIN REGENERATION", description: "PDRN-based bio-regeneration therapy that boosts hydration, elasticity and repair for firmer, revitalised skin." },
+      { slug: "under-eye-treatment", image: "/services/undereye-compressed.jpg", label: "UNDER EYE TREATMENT", title: "Under-Eye Treatment", tagline: "BRIGHT & REFRESHED", description: "Targeted therapy for dark circles, puffiness and fine lines to refresh and brighten the delicate under-eye area." },
+      { slug: "salmon-dna", image: "/services/salmondna-compressed.jpg", label: "SALMON DNA", title: "Salmon DNA", tagline: "SKIN REGENERATION", description: "PDRN-based bio-regeneration therapy that boosts hydration, elasticity and repair for firmer, revitalised skin." },
       // TODO: source link was a Google Photos share page, not a direct image —
       // download the actual photo and save as /services2/hifu-compressed.jpg
-      { slug: "hifu", image: "/services2/hifu-compressed.jpg", label: "HIFU", title: "HIFU", tagline: "NON-SURGICAL LIFT", description: "High-intensity focused ultrasound that lifts and firms by triggering deep collagen renewal, with no downtime." },
+      { slug: "hifu", image: "/services/hifu-compressed.jpg", label: "HIFU", title: "HIFU", tagline: "NON-SURGICAL LIFT", description: "High-intensity focused ultrasound that lifts and firms by triggering deep collagen renewal, with no downtime." },
     ],
   },
   {
@@ -67,7 +67,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         slug: "upper-lips",
-        image: "/services2/upperlips-compressed.jpg",
+        image: "/services/upperlips-compressed.jpg",
         label: "UPPER LIPS",
         title: "Upper Lips LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -76,7 +76,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "chin-sidelocks",
-        image: "/services2/chin-compressed.jpg",
+        image: "/services/chin-compressed.jpg",
         label: "CHIN / SIDELOCKS",
         title: "Chin / Sidelocks LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -85,7 +85,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "full-face",
-        image: "/services2/fullface-compressed.jpg",
+        image: "/services/fullface-compressed.jpg",
         label: "FULL FACE",
         title: "Face LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -94,7 +94,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "underarms",
-        image: "/services2/underarms-compressed.jpg",
+        image: "/services/underarms-compressed.jpg",
         label: "UNDERARMS",
         title: "Underarms LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -103,7 +103,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "full-arms",
-        image: "/services2/fullarms-compressed.jpg",
+        image: "/services/fullarms-compressed.jpg",
         label: "FULL ARMS",
         title: "Full Arms LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -112,7 +112,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "full-legs",
-        image: "/services2/fulllegs-compressed.jpg",
+        image: "/services/fulllegs-compressed.jpg",
         label: "FULL LEGS",
         title: "Full Legs LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -121,7 +121,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "half-body",
-        image: "/services2/halfbody-compressed.jpg",
+        image: "/services/halfbody-compressed.jpg",
         label: "HALF BODY",
         title: "Half Body LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -130,7 +130,7 @@ const CATEGORIES: Category[] = [
       },
       {
         slug: "full-body",
-        image: "/services2/fullbody-compressed.jpg",
+        image: "/services/fullbody-compressed.jpg",
         label: "FULL BODY",
         title: "Full Body LHR Treatment",
         tagline: "SMOOTH SKIN",
@@ -149,10 +149,10 @@ const CATEGORIES: Category[] = [
     items: [
       { slug: "stunox", image: "/services2/stunox-compressed.jpg", label: "STUNOX", title: "Stunox", tagline: "COLLAGEN RENEWAL", description: "An advanced anti-aging treatment that stimulates collagen renewal to firm the skin and soften visible signs of aging." },
       { slug: "skin-booster", image: "/services2/skinbooster-compressed.jpg", label: "SKIN BOOSTER", title: "Skin Booster", tagline: "DEEP HYDRATION", description: "Injectable hyaluronic acid boosters that hydrate from within for plump, smooth and naturally glowing skin." },
-      { slug: "profhilo", image: "/services2/profhilo-compressed.jpg", label: "PROFHILO", title: "Profhilo", tagline: "BIO-REMODELLING", description: "A next-generation bio-remodelling injectable that improves skin laxity, hydration and overall firmness." },
+      { slug: "profhilo", image: "/services/propfilo-compressed.jpg", label: "PROFHILO", title: "Profhilo", tagline: "BIO-REMODELLING", description: "A next-generation bio-remodelling injectable that improves skin laxity, hydration and overall firmness." },
       // TODO: source link was a Pinterest pin, not a direct image —
       // download the actual photo and save as /services2/fillers-compressed.jpg
-      { slug: "fillers", image: "/services2/filler-compressed.jpg", label: "FILLERS", title: "Fillers", tagline: "RESTORE VOLUME", description: "Dermal fillers that restore lost volume and soften lines, sculpting natural contours in the cheeks, lips and jawline." },
+      { slug: "fillers", image: "/services/fillers-compressed.jpg", label: "FILLERS", title: "Fillers", tagline: "RESTORE VOLUME", description: "Dermal fillers that restore lost volume and soften lines, sculpting natural contours in the cheeks, lips and jawline." },
       // TODO: source link was a Pinterest pin, not a direct image —
       // download the actual photo and save as /services2/threads-compressed.jpg
       { slug: "threads", image: "/services2/threads-compressed.jpg", label: "THREADS", title: "Threads", tagline: "NON-SURGICAL LIFT", description: "Dissolvable thread-lift technique that lifts and tightens sagging skin while stimulating fresh collagen production." },
@@ -185,11 +185,11 @@ const CATEGORIES: Category[] = [
     subheading:
       "Layered medical-grade facials that cleanse, hydrate and sculpt for a healthy, lasting glow.",
     items: [
-      { slug: "hydrafacial", image: "/services2/hydrafacial-compressed.jpg", label: "HYDRAFACIAL", title: "HydraFacial", tagline: "DEEP CLEANSE", description: "A three-step medical-grade facial that clears out impurities and locks in hydration for instantly brighter skin." },
-      { slug: "thermal-sculpting-facial", image: "/services2/thermal-compressed.jpg", label: "THERMAL SCULPTING FACIAL", title: "Thermal Sculpting Facial", tagline: "CONTOUR & LIFT", description: "Heat-based contouring therapy that firms facial contours and stimulates collagen for a lifted, sculpted look." },
+      { slug: "hydrafacial", image: "/services/hydrafacial-compressed.jpg", label: "HYDRAFACIAL", title: "HydraFacial", tagline: "DEEP CLEANSE", description: "A three-step medical-grade facial that clears out impurities and locks in hydration for instantly brighter skin." },
+      { slug: "thermal-sculpting-facial", image: "/services/thermalfacial-compressed.jpg", label: "THERMAL SCULPTING FACIAL", title: "Thermal Sculpting Facial", tagline: "CONTOUR & LIFT", description: "Heat-based contouring therapy that firms facial contours and stimulates collagen for a lifted, sculpted look." },
       // TODO: source link was a Google Photos share page, not a direct image —
       // download the actual photo and save as /services2/fireandice-compressed.jpg
-      { slug: "clinical-fire-ice", image: "/services2/fireandice-compressed.jpg", label: "CLINICAL FIRE & ICE", title: "Clinical Fire & Ice", tagline: "RESURFACE & CALM", description: "A dual-action clinical facial that resurfaces with a warming exfoliant, then calms and cools for smooth, refreshed skin." },
+      { slug: "clinical-fire-ice", image: "/services/clinicalfire-compressed.jpg", label: "CLINICAL FIRE & ICE", title: "Clinical Fire & Ice", tagline: "RESURFACE & CALM", description: "A dual-action clinical facial that resurfaces with a warming exfoliant, then calms and cools for smooth, refreshed skin." },
       { slug: "obagi", image: "/services2/obagi-compressed.jpg", label: "OBAGI", title: "Obagi", tagline: "MEDICAL SKINCARE", description: "Clinically formulated Obagi protocols that correct tone, texture and signs of aging through guided medical-grade skincare." },
     ],
   },

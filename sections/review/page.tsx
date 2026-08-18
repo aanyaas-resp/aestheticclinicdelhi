@@ -12,67 +12,35 @@ import gsap from "gsap";
 const REVIEWS = [
   {
     id: "review-1",
-    name: "Yashvi",
+    name: "Aarav Mehta",
     rating: 5,
-    service: "Manicure, Pedicure & Hair Spa",
+    service: "HydraFacial",
     quote:
-      "It's always a great experience getting all services here. Shivam does my manicure, pedicure, and hair spa, and the service was excellent from start to finish. He's professional, attentive, and makes sure you're comfortable throughout.",
+      "Had a really good experience at The Square Aesthetic Clinic. The team was professional and explained the HydraFacial treatment clearly. My skin felt fresh, clean and noticeably brighter after the session.",
   },
   {
     id: "review-2",
-    name: "Prabhleen Kaur",
+    name: "Riya Sharma",
     rating: 5,
-    service: "Hair Styling",
+    service: "Laser Hair Reduction",
     quote:
-      "Had an amazing experience at Square Salon! The staff was professional, welcoming, and really attentive to what I wanted. My hair service turned out exactly how I imagined — the cut, styling, and overall finish were perfect.",
+      "The overall experience was excellent. The staff was very professional, made me feel comfortable throughout the treatment and explained everything properly. The clinic is clean, modern and well maintained.",
   },
   {
     id: "review-3",
-    name: "Harnoor Kaur",
+    name: "Neha Kapoor",
     rating: 5,
-    service: "Waxing & Hair Treatment",
+    service: "Skin Aesthetics",
     quote:
-      "Best salon in the city. Amazing service. Muskan makes waxing feel painless. Got my hair done too and they did an amazing job tackling my frizz and curls with hair botox treatment.",
+      "I had a wonderful experience at The Square Aesthetic Clinic. The consultation was detailed and the treatment was personalised according to my skin concerns. The staff is friendly, professional and very attentive.",
   },
   {
     id: "review-4",
-    name: "Kanika Rawat",
+    name: "Karan Malhotra",
     rating: 5,
-    service: "Bridal Nails",
+    service: "Hair Restoration",
     quote:
-      "Got my bridal nails done by Sanjay. He did such an amazing work. Everyone loved my nails. I would definitely get all my future nails done by him.",
-  },
-  {
-    id: "review-5",
-    name: "Zoya Nehra",
-    rating: 5,
-    service: "Hair Colour",
-    quote:
-      "Got my hair color done here for the second time and very happy with the results again! The staff is super professional and really takes the time to understand what you want.",
-  },
-  {
-    id: "review-6",
-    name: "Pooja Malhotra",
-    rating: 5,
-    service: "Hair Colour & Makeup",
-    quote:
-      "Amazing experience at Square Salon. Got hair colour and makeup done by the experienced and friendly staff! Must visit this luxury salon.",
-  },
-  {
-    id: "review-7",
-    name: "Priyanka Sobti",
-    rating: 5,
-    service: "General Services",
-    quote:
-      "Amazing hospitality, services, and the staff was very helpful and cooperative — highly professional and trained. The salon is very hygienic and they treat clients like guests, not just customers.",
-  },
-  {
-    id: "review-8",
-    name: "Mayank Singh",
-    rating: 5,
-    service: "Hair Styling",
-    quote:
-      "The service is fantastic! The stylist did an amazing job. The atmosphere is great, the staff is professional, and I couldn't be happier with the results. Highly recommended.",
+      "Very impressed with the clinic and the level of care provided. The treatment process was explained clearly and the team was extremely supportive throughout. Overall, a professional and comfortable experience.",
   },
 ];
 
