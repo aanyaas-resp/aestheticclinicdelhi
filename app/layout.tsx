@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Montserrat, Cinzel } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -143,6 +144,20 @@ export default function RootLayout({
             __html: JSON.stringify(LOCAL_BUSINESS_JSON_LD),
           }}
         />
+
+        {/* Google Ads conversion tracking (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18375995180"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18375995180');
+          `}
+        </Script>
       </head>
       <body>
         {/* Navbar stays OUTSIDE SmoothScroll — it's position:fixed and must
