@@ -177,7 +177,7 @@ export default function BookingModal({ isOpen, onClose, presetService }: Booking
         ) : (
           <form onSubmit={handleSubmit} className="mt-7 space-y-5">
             <div>
-              <label htmlFor="booking-name" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-gold-soft">
+              <label htmlFor="booking-name" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-white">
                 Full Name
               </label>
               <input
@@ -194,7 +194,7 @@ export default function BookingModal({ isOpen, onClose, presetService }: Booking
             </div>
 
             <div>
-              <label htmlFor="booking-phone" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-gold-soft">
+              <label htmlFor="booking-phone" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-white">
                 Phone
               </label>
               <div className="flex overflow-hidden rounded-xl border border-white/15 bg-white/5 focus-within:ring-2 focus-within:ring-gold-soft">
@@ -215,7 +215,7 @@ export default function BookingModal({ isOpen, onClose, presetService }: Booking
 
             {isLocked ? (
               <div>
-                <p className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-gold-soft">
+                <p className="mb-2 block text``` font-semibold uppercase tracking-[0.15em] text-white">
                   Treatment Selected
                 </p>
                 <div className="flex items-center justify-between gap-3 rounded-2xl border border-gold-soft/30 bg-gold-soft/10 px-4 py-3">
@@ -234,7 +234,7 @@ export default function BookingModal({ isOpen, onClose, presetService }: Booking
               </div>
             ) : (
               <div>
-                <label htmlFor="booking-service" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-gold-soft">
+                <label htmlFor="booking-service" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-white">
                   Treatment Interest
                 </label>
                 <div className="relative">

@@ -55,24 +55,24 @@ export default function BookingForm({ onSuccess }: { onSuccess?: () => void }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full name"
-          className="w-full rounded-2xl border border-white bg-white/55 py-3.5 pl-11 pr-4 text-sm text-teal-darker placeholder:text-teal-darker/45 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md transition-all duration-200 focus:border-teal-dark focus:bg-white/80 focus:ring-4 focus:ring-teal-dark/15"
+          className="w-full rounded-2xl border border-white bg-white/55 py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-teal-darker/45 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md transition-all duration-200 focus:border-teal-dark focus:bg-white/80 focus:ring-4 focus:ring-teal-dark/15"
         />
       </div>
 
       <div className="group relative">
-        <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/45 transition-colors duration-200 group-focus-within:text-teal-dark" strokeWidth={1.75} />
+        <Phone className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white transition-colors duration-200 group-focus-within:text-teal-dark" strokeWidth={1.75} />
         <input
           type="tel"
           inputMode="numeric"
           value={mobile}
           onChange={(e) => setMobile(e.target.value.replace(/\D/g, "").slice(0, 10))}
           placeholder="Mobile number"
-          className="w-full rounded-2xl border border-white bg-white/55 py-3.5 pl-11 pr-4 text-sm text-teal-darker placeholder:text-teal-darker/45 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md transition-all duration-200 focus:border-teal-dark focus:bg-white/80 focus:ring-4 focus:ring-teal-dark/15"
+          className="w-full rounded-2xl border border-white bg-white/55 py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-teal-darker/45 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md transition-all duration-200 focus:border-teal-dark focus:bg-white/80 focus:ring-4 focus:ring-teal-dark/15"
         />
       </div>
 
       <div className="group relative">
-        <Stethoscope className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-teal-darker/45 transition-colors duration-200 group-focus-within:text-teal-dark" strokeWidth={1.75} />
+        <Stethoscope className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white transition-colors duration-200 group-focus-within:text-teal-dark" strokeWidth={1.75} />
         <select
           value={treatment}
           onChange={(e) => setTreatment(e.target.value)}

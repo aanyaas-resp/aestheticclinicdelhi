@@ -145,7 +145,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Ads conversion tracking (gtag.js) */}
+      
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18375995180"
           strategy="afterInteractive"
@@ -160,8 +160,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        {/* Navbar stays OUTSIDE SmoothScroll — it's position:fixed and must
-            stay pinned to the real viewport, not the virtual-scroll content. */}
+       
         <Navbar />
         <SmoothScroll>
           {children}

@@ -138,7 +138,7 @@ export default function Hero() {
         <div>
           <p
             ref={eyebrowRef}
-            className="mb-5 -translate-y-[18px] text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-gold-soft opacity-0"
+            className="mb-5 -translate-y-[18px] text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-white opacity-0"
           >
             Aesthetic Clinic — Rajouri Garden
           </p>

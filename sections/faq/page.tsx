@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import { ChevronDown, ArrowUpRight } from "lucide-react";
+import BookingModal from "@/components/BookingModal";
 
 const FAQS = [
   {
@@ -44,6 +44,7 @@ const FAQS = [
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
     <main className="bg-cream-text px-6 py-24 sm:px-10 lg:px-16">
@@ -108,8 +109,9 @@ export default function FAQPage() {
           <p className="mt-2 font-sans text-sm text-cream-text/75 sm:text-base">
             Book a consultation and get answers specific to your skin or hair.
           </p>
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={() => setIsBookingOpen(true)}
             className="btn-pill group mt-6 inline-flex bg-gold-soft text-deep-teal shadow-md shadow-black/15 transition-transform duration-300 hover:scale-[1.04] hover:bg-gold-soft/90 active:scale-[0.98]"
           >
             Book Your Appointment
@@ -117,9 +119,13 @@ export default function FAQPage() {
               className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               strokeWidth={2}
             />
-          </a>
+          </button>
         </div>
       </div>
+
+      {isBookingOpen && (
+        <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      )}
     </main>
   );
 }
